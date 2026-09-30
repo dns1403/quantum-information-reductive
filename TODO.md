@@ -1,6 +1,6 @@
 # Research checklist — 30 September 2026
 
-The requested critical proposal and detailed mathematical investigation are complete.
+The initial proposal is complete. The bounded Hecke-positivity continuation is active.
 `report.tex` is the source of truth; future research items below are not established claims.
 
 ## Completed
@@ -25,10 +25,20 @@ The requested critical proposal and detailed mathematical investigation are comp
 - [x] Run document citation/environment audit and LaTeX syntax check without compiling.
 - [x] Commit completed work after explicit staging and staged-size inspection (exp-E001-success).
 
+## Continuation phase
+
+- [x] Recover checkpoint/tag, preserve later ignore rules, create research branch, rerun two decisive exact certificates.
+- [x] E003: self-contained obstruction note, fresh independent reconstruction, focused novelty audit, explicit parameter inversion and endpoint scope.
+- [x] E004: derive full direct-sum conditional-Choi criterion and exact diagonal cone, trace weights, symmetric subfamily and sharp depolarizing repair.
+- [ ] E005: derive affine local constraints and pursue one global construction or scoped obstruction.
+- [ ] Translate valid finite-algebra dynamics to physical density matrices with correct trace weights.
+- [ ] Update claim ledger, verification artifacts, note/report, syntax audit and coherent commits.
+
 ## Future research / unverified claims
 
 - [ ] Establish publication-level novelty of the exact A2 obstruction. No prior occurrence was found in the bounded audit, which is not proof of originality. Consult a Hecke operator-algebra specialist before a novelty claim; no outreach is authorized or performed.
-- [ ] Rank 1: classify the finite A2 conditional-positivity cone exactly, then prove or obstruct proper CP diagonal rates for affine A2 at q=2. The preliminary q=4 cone in `scripts/results/provisional_rate_cone.txt` is unverified and not used in a theorem.
+- [x] Rank 1 finite step: classify the entire four-rate A2 cone. The old q=4 preliminary list is now certified by E004, including sufficiency and the sharp uniform depolarizing correction.
+- [ ] Rank 1 remaining: prove or obstruct proper CP diagonal rates for affine A2 at q=2. Passing the local cone is necessary, not sufficient.
 - [ ] Rank 2: prove or refute alpha_I_n=2 for deeper principal congruence subgroups. Uniform positivity is already proved; do not reopen it as the novelty target.
 - [ ] Rank 3, conditional on a concrete analytical payoff: specify a CP parabolic correspondence, state relation, and generator intertwining; identify any surviving derived information. No such bridge is currently established.
 - [ ] Optional literature lead: inspect Zehong Zhao's 2026 dissertation on Hecke DGAs and Bernstein centers if full repository access becomes available; it was not used to carry an argument.

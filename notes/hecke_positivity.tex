@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,booktabs,graphicx,hyperref}
+\usepackage[most]{tcolorbox}
+\newtcolorbox{verification}{title=Verification,colback=gray!5,colframe=gray!60,breakable}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{corollary}[definition]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[definition]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Diagonal quantum Markov generators on the finite A2 Hecke algebra}
+\author{Research workspace: independently checked research note}
+\date{30 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We audit an explicit obstruction to positivity of Coxeter-length damping
+on the normalized Hecke algebra of $S_3$. We then characterize its full
+four-rate cone of symmetric diagonal quantum Markov generators by small
+linear matrix inequalities. Under exchange of the two generators the cone
+is polyhedral, and the minimum uniform depolarizing correction to length
+has a closed formula. Proofs and exact computational certificates are
+distinguished throughout; publication-level novelty is unconfirmed.
+\end{abstract}
+% Shared mathematical source with report.tex; paths are relative to project root.
+% Repository policy: do not compile LaTeX in this workspace.
+\input{notes/hecke_positivity_body.tex}
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

@@ -1,11 +1,19 @@
 {
   "status": "PASS",
-  "bibliography_entries": 23,
-  "cited_entries": 23,
-  "labels": 13,
-  "references_resolved": 12,
+  "bibliography_entries": 27,
+  "cited_entries": 26,
+  "labels": 30,
+  "references_resolved": 23,
   "environments_balanced": true,
   "experiment_fields_complete": true,
+  "experiments": [
+    "E000",
+    "E001",
+    "E002",
+    "E003",
+    "E004"
+  ],
+  "shared_note_input_resolved": true,
   "notes_sha256": "fd5142f3ef6cd487c66bb122b8defbb95fa8dcf0e3f2ef394338697d0584ad55",
   "notes_check": "supplied PDF hash matches audited source; fetched author PDF byte-identical",
   "latex_compiled": false

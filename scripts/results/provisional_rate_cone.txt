@@ -1,4 +1,10 @@
-UNVERIFIED EXPLORATORY LEAD — NOT A THEOREM
+HISTORICAL EXPLORATORY LEAD — RESOLVED BY E004
+Continuation note (2026-09-30): the list below has now been derived and
+certified, including sufficiency, in notes/hecke_positivity_body.tex and
+scripts/verify_generator_cone.py. The following original entry records
+its status at checkpoint 4a6eaa9; it is preserved for provenance.
+
+ORIGINAL: UNVERIFIED EXPLORATORY LEAD — NOT A THEOREM
 Recorded 2026-09-30; not used in report conclusions.
 
 An exploratory block conditional-Choi calculation at q=4 suggested that

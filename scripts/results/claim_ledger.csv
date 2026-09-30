@@ -21,3 +21,6 @@ C19,A bounded graded *-realization retains positive degrees,Refuted under stated
 C20,Guessed Satake--Poisson intertwining holds,Refuted,Equation~\eqref{eq:satake-defect}
 C21,Derived Heyer data improves QMS entropy,Conjectured / unsupported,Missing positive correspondence
 C22,Protected algebra implies robust code or Gibbs sampler,Refuted as an inference,No operational hypotheses supplied
+C23,Full four-rate finite A2 generator cone,Proved here,Theorem~\ref{thm:p2-cone}; exact direct-sum Choi reduction
+C24,Symmetric finite A2 cone is seven halfspaces,Proved here,Corollary~\ref{cor:p2-symmetric}; symbolic characteristic polynomials
+C25,Sharp uniform depolarizing repair threshold,Proved here,Corollary~\ref{cor:p2-repair}; all seven exact branches

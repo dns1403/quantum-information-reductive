@@ -1,0 +1,195 @@
+Focused novelty and generator-criterion audit
+Execution date: 2026-09-30. Prepared by focused_novelty for the coordinator.
+Scope: continuation of E001; no broad source restart, no changes to references.bib/report.tex.
+
+VERDICT
+
+The normalized Hecke H_q(S3) length-damping obstruction is proved in this
+project; an earlier occurrence of its exact projection certificate was not
+located in this bounded audit. Do not label it novel, first, or a complete
+solution to BCW Problem 9.1. The diagonal/proper qualification is essential
+for the affine A2 continuation: affine Hecke C*-algebras are already type I,
+whereas the inspected sources do not provide the requested proper semigroup
+diagonal in the normalized canonical Hecke basis.
+
+No prior exact classification of the real radial finite-A2 diagonal generator
+cone was located. The general conditional-Choi machinery is standard; only
+the specialized explicit inequalities/certificates could be project substance.
+
+1. BCW VERSION, PUBLISHED TEXT, AND SCOPE
+
+Matthijs Borst, Martijn Caspers, Mateusz Wasilewski,
+Bimodule coefficients, Riesz transforms on Coxeter groups and strong solidity.
+Groups, Geometry, and Dynamics 18(2) (2024), 501-549.
+DOI: https://doi.org/10.4171/GGD/752
+Current arXiv page: https://arxiv.org/abs/2109.00588
+Current version remains v3, 10 September 2024; comment says Lemmas 3.5 and 3.6
+repair a gap in the accepted version. Published PDF independently inspected:
+https://ems.press/content/serial-article-files/47402
+
+Anchors: Section 8.1 fixes normalized Hecke multiplication and coefficient
+trace. Section 8.2 equation (8.1), Assumption 8.1, printed p.543 = PDF p.43,
+assumes normal UCP extension for all t>=0 of exp(-t psi(w)) on T_w, where
+psi is proper and CND on W. Problem 9.1, printed p.546 = PDF p.46, asks
+about Haagerup and weak-*CBAP, with the generality of the word-length
+instance explicitly a subsidiary question. Negating ordinary-length
+positivity in A2 answers that instance; it says nothing against other
+proper CP rates or abstract approximation properties.
+
+2. USEFUL BACKWARD/FORWARD CAVEATS
+
+(a) Borst MSc thesis, 2021.
+Matthijs J. Borst, Constructing gradient-S_p quantum Markov semi-groups to
+obtain strong solidity results for von Neumann algebras. TU Delft MSc thesis,
+defense 30 June 2021 (title page).
+Primary PDF:
+https://repository.tudelft.nl/file/File_2d2624da-4f22-499a-a4bd-015f6a386753?preview=1
+Printed p.39 = PDF p.40, Section 8.2, warns that a CND group function need
+not supply UCP on the Hecke deformation and introduces Assumption 8.1.
+No explicit S3/A2 nonpositive input was found by full-text searching and
+inspection of the Hecke discussion. Section 8.3 and Section 11.2.2 still
+treat suitable parameter tuples as unknown. Thus this earlier warning
+must not be advertised as this project's new conceptual observation;
+it is not an inspected earlier proof of our exact certificate either.
+
+(b) Borst PhD thesis, 2025.
+Matthijs Jacobus Borst, On rigidity theory, strong solidity, Coxeter groups,
+graph products and commutator estimates. TU Delft dissertation, defense
+24 March 2025 (title page). DOI:
+https://doi.org/10.4233/uuid:d63bdb80-fffa-4b97-85ba-7dc663e80721
+Institutional metadata:
+https://research.tudelft.nl/en/publications/on-rigidity-theory-strong-solidity-coxeter-groups-graph-products-/
+Primary PDF:
+https://repository.tudelft.nl/file/File_539027bb-ef81-4d02-96fb-92f22447c41b
+Assumption 4.7.1 on printed p.86 = PDF p.101, and Problem 4.8.1 on printed
+p.90 = PDF p.105, retain the unknown-generality statement for word-length
+UCP. The discussion after Problem 4.8.2 advertises later strong-solidity
+and weak-*CCAP improvements for graph products, not the finite-A2 positivity
+certificate. This is a useful recent primary forward anchor, not a guarantee
+against an unindexed or unpublished result.
+
+(c) Mario Klisse and Helena Perovic, Quantum Metric Structures on
+Iwahori-Hecke Algebras.
+https://arxiv.org/abs/2508.07857
+Current version remains v1, 11 August 2025. Author's current publication
+page lists it as to appear in Journal of Noncommutative Geometry:
+https://sites.google.com/view/mario-klisse/publications
+No final volume/pages were established here. Section 5.3 notes failure of
+the ambient Schur multipliers to preserve deformed Hecke C*-algebras.
+That is a different issue from positivity of the separately defined
+canonical-basis damping map. Section 5.2 highlights affine algebras and
+their finite generation over the center for quantum metric questions.
+Theorem scope is chiefly right-angled; this paper does not supply an
+all-Coxeter Hecke length-positivity theorem.
+
+(d) Caspers--Klisse--Skalski--Vos--Wasilewski,
+Relative Haagerup property for arbitrary von Neumann algebras.
+https://arxiv.org/abs/2110.15078
+Current version remains v4, 28 March 2023; published Adv. Math.421 (2023),
+109017. Existing report metadata was retained. Section 8, before
+Proposition 8.3, supplies standard parabolic conditional expectations;
+Corollary 8.4 handles virtually free Coxeter systems. These give valid
+bounded support-count diagonal semigroups but do not make those rates
+proper on an infinite finitely generated Coxeter group.
+
+3. AFFINE TYPE-I FACT: ALREADY KNOWN, DO NOT REOPEN AS NOVELTY TARGET
+
+Eric M. Opdam, On the spectral decomposition of affine Hecke algebras.
+Current arXiv is v4, 18 September 2003:
+https://arxiv.org/abs/math/0101007
+https://arxiv.org/pdf/math/0101007v4
+Published J. Inst. Math. Jussieu 3(4) (2004), 531-648. Publisher metadata:
+https://www.cambridge.org/core/journals/journal-of-the-institute-of-mathematics-of-jussieu/article/abs/on-the-spectral-decomposition-of-affine-hecke-algebras/2CFD5EEEC995BFBC7327962BC3A3EA4C
+Correct publisher DOI: https://doi.org/10.1017/S1474748004000155
+CAUTION: the UvA institutional landing metadata gives another DOI ending
+00015 rather than 00155 and pages 1-117; use publisher metadata above.
+
+Anchors in arXiv v4: Proposition 2.10 p.16 (finite over center),
+Corollary 2.11(i),(iv) pp.16-17 (finite-dimensional irreducible
+*-representations, dimension <= |W0|), Corollary 2.12 p.17 (C*-completion
+finite type I). The older UvA 72-page PDF has a Lemma 2.7 at p.11, but
+its numbering and stronger extension wording must not be mixed with v4.
+
+Inference, not a claim about canonical multipliers: a separable finite
+type-I von Neumann algebra decomposes into matrix-valued commutative
+measure algebras. Increasing finite partitions supply finite-dimensional
+conditional expectations converging in L2, hence Haagerup approximation.
+One can form standard symmetric QMS using these expectations. None of
+this forces the expectations or generator to be diagonal in {T_w}.
+Therefore abstract QMS existence/Haagerup for affine A2 is not the
+remaining research problem. The explicit proper diagonal rate constraint
+remains the substantive question.
+
+4. FINITE-DIMENSIONAL CONDITIONAL-CHOI CRITERION
+
+Verified primary pedagogical source:
+Michael M. Wolf, Quantum Channels & Operations: Guided Tour, lecture notes
+dated 5 July 2012. Institutional record and archival PDF:
+https://mediatum.ub.tum.de/1701036
+https://mediatum.ub.tum.de/doc/1701036/1701036.pdf
+Proposition 7.2, pp.122-123: for a Hermiticity-preserving map on M_d,
+positivity of the Choi compression to the complement of the identity
+vector is equivalent to a CP-plus-left/right-drift representation.
+Proposition 7.3, pp.123-124: this is equivalent to generating a continuous
+CP semigroup. These propositions do not require the generator's CP
+part to be unital or its diagonal block to preserve trace. Unitality
+and trace preservation are additional linear conditions.
+
+The following direct-sum reduction is an elementary deduction from that
+standard matrix criterion (not a separately located Hecke theorem).
+Let A=direct_sum_i M_{d_i}, let L:A->A be Hermiticity preserving, and let
+L_ij=pi_i L iota_j. Define
+  C_ij(L)=sum_{a,b=1}^{d_j} E_ab tensor L_ij(E_ab),
+and Omega_i=sum_a e_a tensor e_a (unnormalized),
+  P_i=1-|Omega_i><Omega_i|/d_i.
+Then exp(tL) is CP for every t>=0 iff
+  C_ij(L)>=0 for i!=j,
+  P_i C_ii(L) P_i>=0 for every i.
+Necessity: at t=0 the cross-block Choi matrices vanish; their derivatives
+must be PSD. The same derivative argument on the kernel of the diagonal
+identity Choi matrix gives the compressed condition.
+Sufficiency: the cross maps L_ij are CP. Proposition 7.2 writes each L_ii
+as Phi_ii plus a left/right drift. Assemble the cross maps and Phi_ii into
+a CP map Phi:A->A and the drifts into a single block-diagonal K in A.
+Then L(x)=Phi(x)+Kx+xK*, with sign of K chosen according to convention.
+The drift exponential is x->exp(tK)x exp(tK*), hence CP; exp(tPhi) is CP
+by its power series; the finite-dimensional Lie-Trotter product proves
+the assertion. This argument does not identify A with M_{sum d_i} and
+does not replace the canonical Hecke trace by a uniform matrix trace.
+For the positive rate operator D with semigroup exp(-tD), apply it to
+L=-D. The coordinator should include this derivation or cite the matrix
+propositions and explain the direct-sum deduction.
+
+Additional foundational metadata verified, theorem text not inspected:
+Erik Christensen and David E. Evans, Cohomology of Operator Algebras and
+Quantum Dynamical Semigroups, J. London Math. Soc. (2)20(2) (1979),
+358-368. DOI https://doi.org/10.1112/jlms/s2-20.2.358 . It concerns the
+general CP-plus-drift structure; do not attach an unverified theorem number.
+
+5. SEARCH COVERAGE AND LIMITATIONS
+
+Queries included BCW exact title/identifier; Assumption 8.1/Problem 9.1;
+Hecke plus (word length, not positive, length multiplier, Markov,
+counterexample, S3, S_3, A2, diagonal, proper, radial, completely positive,
+conditionally completely positive, 2025, 2026); affine Hecke/type I; and
+conditional complete positivity/direct sum/Choi. Exact-title searches,
+author pages, 2025 Borst dissertation, the latest 2025 quantum-metric
+preprint, and the 2023 relative-Haagerup backward chain were inspected.
+Searches on generic 'Hecke' were noisy (0-Hecke monoids, modular Hecke
+operators, Dunkl/Hecke-Bochner semigroups); none of those was conflated
+with normalized Coxeter Hecke operator algebras. Index crawl dates were
+not treated as publication dates. No comprehensive citation-index export,
+MathSciNet/zbMATH review search, or unpublished author correspondence was
+performed. No source dated after 2026-09-30 is relied upon.
+
+Unresolved leads, suitable for later work rather than a novelty claim:
+- Bibliographic review/author confirmation of the precise S3 projection
+  formula, if publication priority becomes consequential.
+- Complete canonical-basis multiplier characterizations on affine Hecke
+  algebras, potentially under hypergroup or positive-type terminology.
+- Whether a proper diagonal symmetric UCP semigroup exists for affine A2
+  at q=2. Neither type-I/HAP nor all finite-parabolic inequalities settle it.
+
+Cached evidence added under artifacts/sources/ (not staged): published
+BCW PDF/text, Borst 2021 MSc and 2025 PhD PDF/text, Wolf PDF/text,
+Opdam older institutional and current v4 PDF/text.

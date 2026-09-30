@@ -389,5 +389,6 @@ code still not runs correctly or the method still underperforms, you can move on
 - Preserve the supplied smooth.pdf and user files. Never manually modify .venv or uv caches. Do not compile report.tex.
 
 **Notes:**
+- Continuation phase (2026-09-30): preserve checkpoint `4a6eaa9` / `exp-E001-success` and later ignore-rules commit; work on `exp/hecke-diagonal-generators`. Audit the exact obstruction, classify finite A2 diagonal generators, and make one bounded affine extension attempt. No broad entropy/source restart, publishing, pushing, or outreach. Independent reconstruction is authorized.
 - Deliver concise verdict, rigorous bridge and example, three ranked precise research questions, a detailed attempt at the best question, and a recommendation on Heyer-specific collaboration.
 - The detailed user brief supplies the setup rounds and explicitly authorizes beginning with the audit; further setup confirmation is unnecessary.

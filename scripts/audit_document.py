@@ -4,7 +4,15 @@ import json
 import re
 from pathlib import Path
 
-report = Path("report.tex").read_text()
+def expand_inputs(path, seen=None):
+    seen=set() if seen is None else set(seen)
+    assert path not in seen, f"Recursive input: {path}"
+    seen.add(path)
+    source=Path(path).read_text()
+    return re.sub(r"\\input\{([^}]+)\}",
+                  lambda m: expand_inputs(m.group(1),seen),source)
+
+report = expand_inputs("report.tex")
 bib = Path("references.bib").read_text()
 keys = re.findall(r"@\w+\{([^,]+),", bib)
 assert len(keys) == len(set(keys)), "Duplicate bibliography key"
@@ -26,7 +34,8 @@ assert not stack
 for image in re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", report):
     assert Path(image).is_file(), image
 assert "\\hline" not in report
-for experiment in ["E000", "E001", "E002"]:
+experiments=re.findall(r"\\subsection\{(E\d+):",report)
+for experiment in experiments:
     start = report.index("\\subsection{"+experiment)
     # Mathematical environments can intervene before the remaining fields.
     end = report.find("\\subsection{", start+12)
@@ -47,6 +56,7 @@ if online.exists():
 result = {"status": "PASS", "bibliography_entries": len(keys), "cited_entries": len(cited),
           "labels": len(labels), "references_resolved": len(refs),
           "environments_balanced": True, "experiment_fields_complete": True,
+          "experiments":experiments,"shared_note_input_resolved":True,
           "notes_sha256": expected, "notes_check": notes_status,
           "latex_compiled": False}
 Path("scripts/results/document_audit.json").write_text(json.dumps(result, indent=2)+"\n")

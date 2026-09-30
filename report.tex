@@ -586,9 +586,10 @@ labelled proved in this project, with novelty unconfirmed.
 using genuine finite parabolics as necessary tests, then prove an extension
 theorem for any surviving infinite-affine candidate. A preliminary
 conditional-Choi calculation suggested a radial rate cone at $q=4$;
-its claimed sufficiency was not independently certified and is not used
-as a theorem. The exact finite classification is a future task, not a
-numerically asserted sharp result.
+its claimed sufficiency was not independently certified at checkpoint E001.
+The continuation now proves the full four-rate classification in
+Theorem~\ref{thm:p2-cone} and certifies the radial list in
+Corollary~\ref{cor:p2-symmetric}.
 \begin{verification}
 \textbf{What:} Positive-input counterexample and algebraic identities of
 Theorem~\ref{thm:a2}.\\
@@ -1167,6 +1168,29 @@ project should begin with the precise missing positivity-compatible
 comparison above; currently there is no evidence for a unifying derived
 mod-$p$/quantum-noise theory.
 
+\section{Continuation plan: finite Hecke positivity}
+The checkpoint \texttt{4a6eaa9}, tagged \texttt{exp-E001-success}, was recovered
+without rewriting it. The subsequent ignore-rules commit \texttt{3557a81}
+is preserved on \texttt{exp/hecke-diagonal-generators}. Both decisive exact
+scripts passed again. E003 will consolidate the theorem and obtain a fresh
+reconstruction before the reviewer reads the old derivation. E004 will derive
+the full direct-sum conditional-Choi criterion before implementing symbolic
+checks, starting with generator-exchange symmetry. E005 will test one bounded
+affine extension route. The existing entropy investigation remains background.
+
+For E004 write $H_q(S_3)=\bigoplus_\alpha M_{d_\alpha}$ with
+$d_\alpha=1,1,2$ and $\tau=\sum_\alpha\gamma_\alpha\Tr_{d_\alpha}$.
+For a diagonal map $L(T_w)=-a(w)T_w$, Fourier inversion in the orthonormal
+Hecke basis gives block maps
+$L_{\alpha\beta}(X)=-\gamma_\beta\sum_w a(w)
+\Tr(\pi_\beta(T_w)^*X)\pi_\alpha(T_w)$.
+The planned exact test is positivity of the cross-block Choi matrices and
+positivity of each diagonal Choi matrix compressed off the maximally entangled
+identity vector. The latter is an infinitesimal condition, not positivity
+of the generator itself. Sufficiency and trace weights must be proved.
+
+\input{notes/hecke_positivity_body.tex}
+
 \section{Claim ledger and reproducibility}
 The categories below distinguish proof provenance from computational checks.
 ``Proved here'' never by itself asserts originality. Numerical support is
@@ -1196,6 +1220,9 @@ C19 & A bounded graded *-realization retains positive degrees & Refuted under st
 C20 & Guessed Satake--Poisson intertwining holds & Refuted & Equation~\eqref{eq:satake-defect}\\
 C21 & Derived Heyer data improves QMS entropy & Conjectured / unsupported & Missing positive correspondence\\
 C22 & Protected algebra implies robust code or Gibbs sampler & Refuted as an inference & No operational hypotheses supplied\\
+C23 & Full four-rate finite A2 generator cone & Proved here & Theorem~\ref{thm:p2-cone}\\
+C24 & Symmetric cone is seven halfspaces & Proved here & Corollary~\ref{cor:p2-symmetric}\\
+C25 & Sharp uniform depolarizing repair & Proved here & Corollary~\ref{cor:p2-repair}\\
 \bottomrule
 \end{longtable}}
 
@@ -1220,14 +1247,14 @@ The decision-scale requirement is exact reasoning for general claims;
 small calculations are faithful finite counterexamples or diagnostics.
 All fixed parameters, normalizations, and unsuccessful approaches used in
 drawing the conclusions are recorded above. The provisional finite rate-cone
-exploration remains explicitly unverified in \texttt{TODO.md}; it is not
-needed for the completed research assessment.
+exploration from the historical checkpoint is now resolved by E004, with
+an independently reviewed exact proof.
 
 \bibliographystyle{plain}
 \bibliography{references}
 
 \section{Experiment summary}
-All entries were completed on 30 September 2026. The associated git commit
+All entries were completed on 30 September 2026. The initial E000--E002 commit
 is identified by its unique subject below and by the tag
 \texttt{exp-E001-success}; this avoids an impossible self-referential hash
 inside its own committed report. Its subject is
@@ -1237,6 +1264,8 @@ inside its own committed report. Its subject is
 ID & Date & Description & Commit & Metric & vs baseline & Status\\\midrule
 E000 & 2026-09-30 & Sources/corners & E001 tag & N/A & N/A & Verified\\
 E001 & 2026-09-30 & A2 obstruction & E001 tag & $-1/210$ & CP refuted & Exact\\
-E002 & 2026-09-30 & Entropy audit & E001 tag & Eq.~\eqref{eq:uniform} & New audit & Proved\\\bottomrule
+E002 & 2026-09-30 & Entropy audit & E001 tag & Eq.~\eqref{eq:uniform} & New audit & Proved\\
+E003 & 2026-09-30 & Fresh obstruction audit & E004 tag & $-1/210$ & Reproduced & Exact\\
+E004 & 2026-09-30 & Full rate cone & E004 tag & $h_{\min}(4)=5$ & Unverified lead resolved & Proved\\\bottomrule
 \end{tabular}}
 \end{document}

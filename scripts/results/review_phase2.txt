@@ -1,0 +1,251 @@
+Independent continuation review, 2026-09-30
+=========================================
+
+Scope and independence
+----------------------
+The reviewer first reconstructed the A2 result directly from the normalized
+quadratic and braid relations, before reading report.tex, review_a2.txt, or the
+existing verification scripts. The first reconstruction used a two-dimensional
+representation and central idempotents. Only afterward were the existing
+results compared. The conditional-Choi criterion was also reasoned through
+before inspecting verify_generator_cone.py. No LaTeX was compiled. This file
+and scripts/verify_obstruction_review.py are the only reviewer-owned changes.
+
+Verdict: no defect found in the claimed obstruction, its finite-parabolic
+transfer, the full block conditional-Choi criterion, the seven symmetric-rate
+inequalities, or the sharp symmetric depolarizing repair. These conclusions
+combine written mathematical arguments below with exact symbolic identities;
+they are not conclusions from floating-point positivity tests.
+
+1. Independent A2 proof reconstruction
+-------------------------------------
+Use q=u^2>0, c=u-u^-1, and basis 1,S,T,ST,TS,STS. Define
+P=(1+u^2)(1+u^2+u^4) and Z=sum_w u^ell(w) T_w.
+Pairing w and sw with ell(sw)=ell(w)+1 gives
+S(T_w+u T_sw)=u(T_w+u T_sw). Thus SZ=TZ=uZ, whence
+Z^2=PZ. Since inversion preserves length, Z*=Z. Therefore p+=Z/P
+is a nonzero positive projection, with canonical trace 1/P. This proves
+input positivity independently of the two-dimensional output calculation.
+
+The selfadjoint matrices
+  S=diag(u,-u^-1),
+  T=(1+u^2)^-1 [[-u^-1,sqrt(u^4+u^2+1)],
+                [sqrt(u^4+u^2+1),u^3]]
+satisfy both quadratic relations and STS=TST. They define a *-representation.
+It is irreducible: S has distinct eigenvalues, and the nonzero off-diagonal
+entry of T excludes both one-dimensional S-eigenspaces as invariant spaces.
+Put J=S+T-cI. Then
+  J^2=I,  ST+TS=-I+cJ,  STS=-J.
+Consequently, for Phi_r(T_w)=r^ell(w)T_w,
+  pi(Phi_r(p+)) = [(1-r)(1+u^2 r)/P] (I+u r J).
+Its two eigenvalues are (1-r)(1+u^2r)(1 +/- ur)/P.
+For u>1 and 1/u<r<1, the minus eigenvalue is strictly negative.
+With r=exp(-t), the interval is 0<t<log(u)=log(q)/2.
+At u=2,r=3/4 the matrix is
+  [[8/525,sqrt(21)/350],[sqrt(21)/350,2/525]],
+with negative eigenvalue -1/210 and eigenvector (-sqrt(21)/7,1).
+
+2. Parameter inversion and endpoints
+------------------------------------
+The map H_{1/q}(S3) -> H_q(S3) sending each simple generator to its negative
+preserves the quadratic relation because c(1/u)=-c(u), and preserves braid
+relations because both sides have the same word length. On the whole basis it
+is T_w^(1/q) -> (-1)^ell(w) T_w^(q). It is trace preserving and * preserving,
+and intertwines all diagonal multipliers. For q<1 the positive input is
+  p- = [sum_w (-u^-1)^ell(w) T_w] / P(q^-1).
+This is the transported p+ from parameter q^-1>1. Therefore the interval is
+0<t<|log(q)|/2 for every q!=1. The script verifies the complete signed basis
+map spatially in faithful regular models, not only the quadratic coefficient.
+At q=1 the interval is empty. At t=0 the map is identity. At the other endpoint
+r=1/u (u>1), this input has zero smaller eigenvalue; that fact does not prove
+positivity or CP of the full multiplier at that time. No classification of
+all isolated times is asserted. Likewise the limiting map r=0 is the trace
+expectation, but its positivity alone says nothing about intervening times.
+
+3. Faithful finite-parabolic inclusion
+--------------------------------------
+Let W_J be a standard finite A2 parabolic of the affine A2 Coxeter group W.
+The normalized multiplication rule ensures span{T_w:w in W_J} is an actual
+unital *-subalgebra, closed under every product, and its ambient length is the
+finite Coxeter length. In the regular representation on ell^2(W), the subspace
+ell^2(W_J) is invariant for all generators in J and is reducing since those
+generators are selfadjoint. Its restriction is the finite regular model and
+is faithful: a delta_e=sum_w a_w delta_w determines every coefficient.
+More strongly, choose shortest representatives x of the left cosets W_J x.
+The length identity ell(wx)=ell(w)+ell(x) gives reducing subspaces ell^2(W_J x),
+each unitarily equivalent to the finite regular model by delta_w -> delta_wx.
+Thus the ambient reduced norm on this subalgebra is exactly its finite norm.
+The finite algebra is a C*-subalgebra of the affine reduced completion and
+also of its von Neumann completion. Ambient positivity would imply positivity
+on the subalgebra. The two-dimensional representation need not extend to W.
+No finite truncation or speculative quotient enters this argument.
+
+The ambient normalized regular conventions were independently checked against
+Borst--Caspers--Wasilewski, Section 8.1:
+https://arxiv.org/html/2109.00588v3#S8.SS1
+The coset/invariant-subspace proof above is supplied explicitly rather than
+being inferred from a literature statement about a different completion.
+
+4. Exact block conditional-Choi criterion
+----------------------------------------
+For H_q(S3)=C direct-sum C direct-sum M_2, let the block dimensions be 1,1,2.
+The canonical trace is gamma_+ Tr_1 + gamma_- Tr_1 + gamma_0 Tr_2, with
+  gamma_+=1/P, gamma_-=q^3/P, gamma_0=q/(1+q+q^2).
+These multiply UNNORMALIZED matrix traces. In particular the matrix block's
+total mass is 2 gamma_0, and gamma_+ + gamma_- + 2 gamma_0=1.
+The first two weights follow from the two central projections; the remaining
+weight follows from total mass and matrix dimension. The full Fourier
+orthogonality/identity formulas are checked exactly in the reviewer script.
+
+Take L(T_w)=-a(w)T_w, with a(e)=0 and real a(w)=a(w^-1). These assumptions give
+L1=0, Hermiticity preservation, trace preservation and trace symmetry. Fourier
+inversion gives, in domain-first Choi convention,
+  C_{alpha,beta}=-gamma_beta sum_w a(w)
+                   conjugate(pi_beta(T_w)) tensor pi_alpha(T_w).
+No transpose should replace that entrywise conjugate. Indeed
+Tr(B* E_ij)=conjugate(B_ij).
+
+Necessary and sufficient generator conditions are:
+  C_{alpha,beta} >= 0 whenever alpha != beta;
+  Q_alpha C_{alpha,alpha} Q_alpha >= 0,
+where Q_alpha projects orthogonally off Omega_alpha=sum_i e_i tensor e_i.
+For scalar blocks Q_alpha=0, so their diagonal conditions are vacuous.
+Necessity follows by differentiating Choi positivity at t=0: cross blocks
+start at zero, while the identity diagonal Choi block is |Omega><Omega|.
+
+For sufficiency, form a CP map Psi whose cross blocks equal those of L and
+whose diagonal Choi blocks are Q C Q. These are all positive, so Psi is CP on
+the direct sum. Each diagonal block of L-Psi has Choi matrix
+  C-QCQ=|Omega><v|+|v><Omega|,
+where, for block dimension d,
+  v=C Omega/d - Omega (Omega* C Omega)/(2d^2).
+Thus its map is B X+X B* for a matrix B obtained by vectorizing v. Taking the
+direct sum of the B matrices gives L(X)=Psi(X)+BX+XB*. Since L1=0,
+B+B*=-Psi(1), putting this in the usual bounded GKSL form. Equivalently,
+X -> exp(tB) X exp(tB*) and exp(t Psi) are CP, and their Trotter product is
+exp(tL); L1=0 supplies unitality. This proves sufficiency, including the cross
+blocks. Trace preservation then follows from the diagonal Fourier formula.
+The generic Hermitian 4x4 completion identity is checked symbolically in the
+reviewer script; the proof establishes the general assertion.
+
+Normalization caution found and resolved: the original coordinate matrix V
+has Gram diag(2,1,1). V*CV >=0 is equivalent to the compression criterion,
+but its eigenvalues are not those of an orthonormal compression. A scalar
+Choi shift becomes a multiple of V*V, not of I. The coordinator switched to
+U=[(1,0,0,-1),(0,1,1,0),(0,1,-1,0)]/sqrt(2) for sharp spectral calculations.
+
+5. Symmetric cone and sharp repair: independent derivation
+---------------------------------------------------------
+Set a(s)=a(t)=a, a(st)=a(ts)=b, a(sts)=d. The whole criterion is exactly
+the following seven scalar inequalities (absolute values stand for two):
+  2a-2b+d >=0,
+  a+b-d >=0,
+  (q+q^-1-1)(b-a)+d >=0,
+  m+ >= |d+|,
+  m- >= |d-|,
+where
+  m+=a(1-q)+bq,       d+=sqrt(q)[a+b(q-1)-dq],
+  m-=a(q-1)+b,        d-=[aq+b(1-q)-d]/sqrt(q).
+The notation d for the longest-word rate and d+/- for scalar differences is
+local to this review; the coordinator uses c for that rate.
+
+Proof: using the identities for J from Section 1,
+  C_{2,+}=gamma_+(m+ I-d+ J),
+  C_{2,-}=(gamma_-/q)(m- I+d- J).
+Reverse cross blocks are their positive scalar multiples. The two scalar
+cross blocks are gamma_-/+ times 2a-2b+d. The orthonormal compression of C22
+has eigenvalues gamma_0 times the first three displayed linear expressions.
+This exhausts every block of the necessary-and-sufficient criterion.
+
+For adding h times trace depolarization to length, the rates are
+(a,b,d)=(1+h,2+h,3+h). The first three expressions reduce to
+1+h, h, q+q^-1+2+h. Also
+  m+=1+q+h,   d+=-sqrt(q)(1+q),
+  m-=1+q+qh,  d-=-(1+q)/sqrt(q).
+Therefore the exact threshold is
+  h_min=(sqrt(Q)-1)(1+Q),  Q=max(q,q^-1).
+For q>=1 the plus-block bound dominates; for q<=1 the minus-block bound
+dominates. At q=1 the threshold is zero. Exact examples: h_min(4)=5,
+h_min(1/4)=5, h_min(2)=3(sqrt(2)-1). Below threshold a cross-block Choi
+eigenvalue is negative; at and above threshold all block conditions hold.
+This is a sharp CP-generator repair in the finite algebra, with no claimed
+automatic affine extension.
+
+6. Existing-report comparison and source discrepancy
+----------------------------------------------------
+The proof, q=4 certificate, derivative, signed duality, and parabolic transfer
+in report.tex E001 agree with the independent reconstruction. No mathematical
+correction is required. The new J factorization provides a shorter optional
+proof of the displayed characteristic polynomial.
+
+The final version warning in scripts/results/review_a2.txt is stale: it says
+the BCW submission history remains v2 2022-08-04. The arXiv source page has
+v3 dated 2024-09-10; report.tex already correctly uses v3. The v3 abstract
+notes a small-gap correction in Lemmas 3.5--3.6. The relevant normalized
+Hecke definitions, Assumption 8.1, and Problem 9.1 were rechecked in v3 and
+retain the needed conventions and limited question. Primary sources:
+https://arxiv.org/abs/2109.00588
+https://arxiv.org/html/2109.00588v3#S8.SS2
+https://arxiv.org/html/2109.00588v3#S9
+
+7. Affine diagonal-idempotent classification and mixture obstruction
+-------------------------------------------------------------------
+The reviewer independently challenged the affine agent's argument before
+reading scripts/results/affine_phase2.txt; no gap was found. The precise scope
+is equal q!=1, canonical faithful finite trace, and normal unital CP trace-
+preserving maps diagonal in the normalized Hecke basis.
+
+If Phi(x)=x, both Schwarz defects Phi(x*x)-x*x and Phi(xx*)-xx* are positive
+with zero faithful trace. They therefore vanish, placing x in the
+multiplicative domain. If Phi fixes T_w and s is a left descent, then
+  tau(T_s T_w T_w*)=tau(T_w* T_s T_w)=u-u^-1,
+because T_s T_w=T_sw+(u-u^-1)T_w and the canonical basis is orthonormal.
+Thus T_w T_w* is fixed and comparison of its nonzero T_s coefficient forces
+m(s)=1. Since T_s^-1=T_s-(u-u^-1)1 is fixed and in the multiplicative domain,
+the first letter strips off: Phi(T_sw)=T_sw. Induction fixes every letter.
+Conversely products of fixed simple generators are fixed. Therefore, for
+J={s:m(s)=1}, the fixed basis elements are exactly {T_w:w in W_J}.
+
+For an idempotent map, all diagonal m(w) are 0 or 1, hence the map equals the
+canonical normal trace expectation E_J. Equality on the Hecke algebra and
+normality prove equality on the completion. This avoids the invalid general
+assumption that every UCP projection has a range closed under the original
+product: here the faithful trace and multiplicative-domain argument prove it.
+For a diagonal QMS the same reasoning identifies the full fixed algebra as
+N_q(W_J), J={s:a(s)=0}. Fourier/L2 coefficients identify arbitrary fixed
+elements, not merely fixed basis elements.
+
+For any positive sum/integral of id-E_J with finite rates on every simple
+generator, each summand obeys
+  1_{w notin W_J} <= sum_{s in supp(w)} 1_{s notin J}.
+Integration gives a(w)<=sum_{s in supp(w)}a(s)<=sum_{s in S}a(s)<infinity.
+There are only finitely many J when S is finite, and nonidentity expectations
+have total weight at most sum_s a(s); repeated or integrated copies cannot
+hide an unbounded generator. In affine A2, every proper parabolic has maximal
+length at most three, so all ell(w)>=4 have full support and precisely the
+constant rate sum_{J proper} c_J. Positive pointwise finite-rate limits retain
+the bound. The q=1 exception is essential because u-u^-1=0; arbitrary subgroup
+expectations at that parameter supply nonparabolic counterexamples.
+
+This obstruction is confined to positive mixtures of DIAGONAL Markov
+idempotents and their stated limits. It does not assert that every CP diagonal
+generator is such a mixture, and does not resolve the existence of other
+proper affine diagonal rates. The script adds all twelve symbolic finite A2
+descent coefficient identities and inverse identities as supporting checks;
+the general affine assertion rests on the proof above.
+
+8. Reproducible verification
+---------------------------
+Command: uv run python scripts/verify_obstruction_review.py
+Outcome: PASS (exact symbolic/rational checks; no floating-point tolerance).
+Covered: full six-dimensional regular representation and positive projection;
+two-dimensional factorization; q=4 negative eigenvalue -1/210; complete signed
+parameter inversion and q=1/4 witness; witness endpoint identities; all nine
+identity-Choi blocks and trace weights; generic Hermitian conditional-Choi
+completion; seven symmetric inequalities; both sharp-repair branches.
+Also covered: all twelve finite A2 descent-coefficient identities for symbolic
+u and the two simple-generator inverse identities.
+The finite-parabolic inclusion, interval sign conclusion, and generator
+sufficiency are mathematical proofs given above, supported by finite exact
+identity checks rather than being replaced by them. Novelty is not established
+by this review; no external outreach was performed.
