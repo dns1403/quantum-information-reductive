@@ -1,0 +1,21 @@
+UNVERIFIED EXPLORATORY LEAD — NOT A THEOREM
+Recorded 2026-09-30; not used in report conclusions.
+
+An exploratory block conditional-Choi calculation at q=4 suggested that
+radial generator rates a,b,c on lengths 1,2,3 might be characterized by
+nonnegativity of the following seven forms:
+
+  -a+10b-8c
+  -5a-2b+8c
+  (2a+5b+c)/8
+  (10a-b-c)/8
+  a+b-c
+  (-13a+13b+4c)/4
+  2a-2b+c
+
+For a=1,b=2 this predicts 2 <= c <= 19/8. Neither completeness of the
+block reduction nor the resulting sufficiency statement received the
+independent verification required for a claim. No sharp rate-cone theorem
+is asserted. Reconstruct and certify this calculation before using it.
+The proved support-count repair c=2 follows from conditional expectations
+and does not depend on this calculation.

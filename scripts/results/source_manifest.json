@@ -1,0 +1,212 @@
+{
+  "scope": "Bounded primary-source audit; publication/version distinctions in report.tex",
+  "sources": [
+    {
+      "key": "HeyerSmooth2025",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://claudius-heyer.github.io/files/smooth.pdf"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{HeyerSmooth2025,\n  author = {Heyer, Claudius},\n  title = {Smooth Representations of {$p$}-Adic Groups},\n  year = {2025},\n  note = {Lecture notes, version dated December 6, 2025; 99 pages. Supplied PDF is byte-identical to online version checked September 30, 2026},\n  url = {https://claudius-heyer.github.io/files/smooth.pdf}\n}"
+    },
+    {
+      "key": "HeyerLeft2023",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/2204.11581"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{HeyerLeft2023,\n  author = {Heyer, Claudius},\n  title = {The Left Adjoint of Derived Parabolic Induction},\n  journal = {Mathematische Zeitschrift},\n  volume = {305},\n  eid = {46},\n  year = {2023},\n  doi = {10.1007/s00209-023-03385-5},\n  eprint = {2204.11581},\n  archivePrefix = {arXiv},\n  primaryClass = {math.RT},\n  note = {Theorem numbering checked in arXiv version 3, January 18, 2024; that version may differ slightly from the published version},\n  url = {https://arxiv.org/abs/2204.11581}\n}"
+    },
+    {
+      "key": "HeyerGeometrical2023",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://arxiv.org/abs/2303.14721"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{HeyerGeometrical2023,\n  author = {Heyer, Claudius},\n  title = {The Geometrical Lemma for Smooth Representations in Natural Characteristic},\n  year = {2023},\n  eprint = {2303.14721},\n  archivePrefix = {arXiv},\n  primaryClass = {math.RT},\n  note = {Preprint, version 2, January 18, 2024; listed as submitted on the author's website, checked September 30, 2026},\n  url = {https://arxiv.org/abs/2303.14721}\n}"
+    },
+    {
+      "key": "HeyerMann2024",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://arxiv.org/abs/2410.13038"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{HeyerMann2024,\n  author = {Heyer, Claudius and Mann, Lucas},\n  title = {6-Functor Formalisms and Smooth Representations},\n  year = {2024},\n  eprint = {2410.13038},\n  archivePrefix = {arXiv},\n  primaryClass = {math.CT},\n  note = {Preprint, version 1, October 16, 2024},\n  url = {https://arxiv.org/abs/2410.13038}\n}"
+    },
+    {
+      "key": "HoffMeierSpiessHeyer2025",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://arxiv.org/abs/2508.14598"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{HoffMeierSpiessHeyer2025,\n  author = {Hoff, Manuel and Meier, Sarah Diana and Spie{\\ss}, Michael and Heyer, Claudius},\n  title = {On the Right Derived Functors of Ordinary Parts},\n  year = {2025},\n  eprint = {2508.14598},\n  archivePrefix = {arXiv},\n  primaryClass = {math.RT},\n  note = {Preprint, version 1, August 20, 2025. Appendix joint with Claudius Heyer; arXiv metadata lists all four authors},\n  url = {https://arxiv.org/abs/2508.14598}\n}"
+    },
+    {
+      "key": "SchneiderSorensen2024",
+      "entry_type": "article",
+      "source_urls": [
+        "https://academic.oup.com/imrn/article-abstract/2024/17/12083/7713910"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{SchneiderSorensen2024,\n  author = {Schneider, Peter and Sorensen, Claus},\n  title = {dg-{Hecke} Duality and Tensor Products},\n  journal = {International Mathematics Research Notices},\n  volume = {2024},\n  number = {17},\n  pages = {12083--12110},\n  year = {2024},\n  doi = {10.1093/imrn/rnae156},\n  eprint = {2305.08795},\n  archivePrefix = {arXiv},\n  primaryClass = {math.NT},\n  url = {https://academic.oup.com/imrn/article-abstract/2024/17/12083/7713910}\n}"
+    },
+    {
+      "key": "HenriquesWasserman2025",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://arxiv.org/abs/2504.10131"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{HenriquesWasserman2025,\n  author = {Henriques, Andr{\\'e} G. and Wasserman, Thomas A.},\n  title = {A three-functor formalism for commutative von {Neumann} algebras},\n  year = {2025},\n  eprint = {2504.10131},\n  archivePrefix = {arXiv},\n  primaryClass = {math.OA},\n  note = {Preprint, version 2, September 17, 2026},\n  url = {https://arxiv.org/abs/2504.10131}\n}\n\n\n% All entries audited against primary sources on 2026-09-30."
+    },
+    {
+      "key": "Arhancet2022",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/2202.12746"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{Arhancet2022,\n  author = {C{\\'e}dric Arhancet},\n  title = {Markov dilations of semigroups of Fourier multipliers},\n  journal = {Positivity}, volume = {26}, pages = {83}, year = {2022},\n  doi = {10.1007/s11117-022-00950-w}, eprint = {2202.12746},\n  archivePrefix = {arXiv}, url = {https://arxiv.org/abs/2202.12746},\n  note = {Article 83; arXiv v3, 11 October 2022. Primary publisher metadata checked}\n}"
+    },
+    {
+      "key": "BorstCaspersWasilewski2024",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/2109.00588"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{BorstCaspersWasilewski2024,\n  author = {Matthijs Borst and Martijn Caspers and Mateusz Wasilewski},\n  title = {Bimodule coefficients, {Riesz} transforms on {Coxeter} groups and strong solidity},\n  journal = {Groups, Geometry, and Dynamics}, volume = {18}, number = {2},\n  pages = {501--549}, year = {2024}, doi = {10.4171/GGD/752},\n  eprint = {2109.00588}, archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2109.00588},\n  note = {arXiv v3, 10 September 2024, fixes a gap in Lemmas 3.5--3.6 of accepted version}\n}"
+    },
+    {
+      "key": "Caspers2020",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/1601.00593"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{Caspers2020,\n  author = {Martijn Caspers},\n  title = {Absence of {Cartan} subalgebras for right-angled {Hecke} von {Neumann} algebras},\n  journal = {Analysis \\& PDE}, volume = {13}, number = {1}, pages = {1--28},\n  year = {2020}, doi = {10.2140/apde.2020.13.1},\n  eprint = {1601.00593}, archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1601.00593},\n  note = {arXiv v3, 12 February 2019; publisher metadata verified at msp.org/apde/2020/13-1/p01.xhtml}\n}"
+    },
+    {
+      "key": "CaspersEtAl2023",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/2110.15078"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{CaspersEtAl2023,\n  author = {Martijn Caspers and Mario Klisse and Adam Skalski and Gerrit Vos and Mateusz Wasilewski},\n  title = {Relative {Haagerup} property for arbitrary von {Neumann} algebras},\n  journal = {Advances in Mathematics}, volume = {421}, pages = {109017},\n  year = {2023}, doi = {10.1016/j.aim.2023.109017},\n  eprint = {2110.15078}, archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2110.15078},\n  note = {arXiv v4, 28 March 2023; journal metadata verified against publisher article and Crossref deposit}\n}"
+    },
+    {
+      "key": "KlissePerovic2025",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://arxiv.org/abs/2508.07857"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{KlissePerovic2025,\n  author = {Mario Klisse and Helena Perovi{\\'c}},\n  title = {Quantum Metric Structures on {Iwahori--Hecke} Algebras},\n  year = {2025}, eprint = {2508.07857}, archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2508.07857},\n  note = {arXiv v1, 11 August 2025. Author's publications page lists to appear in Journal of Noncommutative Geometry; no final volume/pages verified}\n}"
+    },
+    {
+      "key": "DuquetLeMerdy2025",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/2406.06074"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{DuquetLeMerdy2025,\n  author = {Charles Duquet and Christian {Le Merdy}},\n  title = {Absolute dilations of {UCP} self-adjoint {Fourier} multipliers: the nonunimodular case},\n  journal = {Glasgow Mathematical Journal}, volume = {67}, number = {3},\n  pages = {307--324}, year = {2025}, doi = {10.1017/S0017089525000023},\n  eprint = {2406.06074}, archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2406.06074},\n  note = {arXiv v2, 4 February 2025; publisher online date 14 February 2025}\n}"
+    },
+    {
+      "key": "BekkaHarpeValette2008",
+      "entry_type": "book",
+      "source_urls": [
+        "https://perso.univ-rennes1.fr/bachir.bekka/KazhdanTotal.pdf"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@book{BekkaHarpeValette2008,\n  author = {Bachir Bekka and Pierre {de la Harpe} and Alain Valette},\n  title = {Kazhdan's Property {(T)}}, publisher = {Cambridge University Press},\n  series = {New Mathematical Monographs}, volume = {11}, year = {2008},\n  url = {https://perso.univ-rennes1.fr/bachir.bekka/KazhdanTotal.pdf},\n  note = {Author-hosted draft dated 23 February 2007 inspected; cite theorem numbers, not publisher page numbers}\n}\n\n\n% Metadata verified from the linked primary/institutional sources on 2026-09-30."
+    },
+    {
+      "key": "GaoRouze2022",
+      "entry_type": "article",
+      "source_urls": [
+        "https://link.springer.com/article/10.1007/s00205-022-01785-1"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{GaoRouze2022,\n  author = {Gao, Li and Rouz{\\'e}, Cambyse},\n  title = {Complete Entropic Inequalities for Quantum Markov Chains},\n  journal = {Archive for Rational Mechanics and Analysis},\n  volume = {245}, pages = {183--238}, year = {2022},\n  doi = {10.1007/s00205-022-01785-1},\n  url = {https://link.springer.com/article/10.1007/s00205-022-01785-1}\n}"
+    },
+    {
+      "key": "WirthZhang2021",
+      "entry_type": "article",
+      "source_urls": [
+        "https://link.springer.com/article/10.1007/s00220-021-04199-4"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{WirthZhang2021,\n  author = {Wirth, Melchior and Zhang, Haonan},\n  title = {Complete Gradient Estimates of Quantum Markov Semigroups},\n  journal = {Communications in Mathematical Physics},\n  volume = {387}, pages = {761--791}, year = {2021},\n  doi = {10.1007/s00220-021-04199-4}, eprint = {2007.13506}, archivePrefix = {arXiv},\n  url = {https://link.springer.com/article/10.1007/s00220-021-04199-4}\n}"
+    },
+    {
+      "key": "BrannanGaoJunge2020II",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://arxiv.org/abs/2008.12038"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{BrannanGaoJunge2020II,\n  author = {Brannan, Michael and Gao, Li and Junge, Marius},\n  title = {Complete Logarithmic Sobolev Inequalities via Ricci Curvature Bounded Below {II}},\n  year = {2020}, eprint = {2008.12038}, archivePrefix = {arXiv}, primaryClass = {math.OA},\n  note = {Version 1, 27 August 2020; cited version is a preprint},\n  url = {https://arxiv.org/abs/2008.12038}\n}"
+    },
+    {
+      "key": "BrannanCulfVernooij2026",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/2502.01974"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{BrannanCulfVernooij2026,\n  author = {Brannan, Michael and Culf, Eric and Vernooij, Matthijs},\n  title = {Quantum expanders and property {(T)} discrete quantum groups},\n  journal = {Journal of Mathematical Physics}, volume = {67}, number = {3},\n  pages = {032201}, year = {2026}, doi = {10.1063/5.0264462},\n  eprint = {2502.01974}, archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2502.01974},\n  note = {Publication metadata verified against TU Delft institutional record; theorem numbers in this report refer to arXiv v1 unless specified}\n}"
+    },
+    {
+      "key": "RouzeFrancaAlhambra2026",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/2411.04885"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{RouzeFrancaAlhambra2026,\n  author = {Rouz{\\'e}, Cambyse and Fran{\\c{c}}a, Daniel Stilck and Alhambra, {\\'A}lvaro M.},\n  title = {Optimal quantum algorithm for Gibbs state preparation},\n  journal = {Physical Review Letters}, volume = {136}, pages = {060601},\n  year = {2026}, doi = {10.1103/lhht-svmn},\n  eprint = {2411.04885}, archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2411.04885}\n}"
+    },
+    {
+      "key": "BeckerRouzeSalzmann2026",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.01192"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{BeckerRouzeSalzmann2026,\n  author = {Becker, Simon and Rouz{\\'e}, Cambyse and Salzmann, Robert},\n  title = {Quantum Gibbs Sampling in Infinite Dimensions: Generation, Mixing Times and Circuit Implementation},\n  year = {2026}, eprint = {2604.01192}, archivePrefix = {arXiv}, primaryClass = {quant-ph},\n  note = {Preprint, version 1, 1 April 2026},\n  url = {https://arxiv.org/abs/2604.01192}\n}"
+    },
+    {
+      "key": "Zhao2026",
+      "entry_type": "misc",
+      "source_urls": [
+        "https://arxiv.org/abs/2608.23482"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@misc{Zhao2026,\n  author = {Zhao, Long},\n  title = {Sharp Complete Modified Log-Sobolev Inequalities on Classical and Quantum Tori},\n  year = {2026}, eprint = {2608.23482}, archivePrefix = {arXiv}, primaryClass = {math.OA},\n  note = {Preprint, version 1, 24 August 2026; contextual source, not used in a proof},\n  url = {https://arxiv.org/abs/2608.23482}\n}"
+    },
+    {
+      "key": "GaoJungeLaRacuenteLi2025",
+      "entry_type": "article",
+      "source_urls": [
+        "https://doi.org/10.1017/fms.2024.117"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{GaoJungeLaRacuenteLi2025,\n  author = {Gao, Li and Junge, Marius and LaRacuente, Nicholas and Li, Haojian},\n  title = {Complete positivity order and relative entropy decay},\n  journal = {Forum of Mathematics, Sigma}, volume = {13}, pages = {e31},\n  year = {2025}, doi = {10.1017/fms.2024.117},\n  url = {https://doi.org/10.1017/fms.2024.117}\n}"
+    },
+    {
+      "key": "HainesKottwitzPrasad2010",
+      "entry_type": "article",
+      "source_urls": [
+        "https://arxiv.org/abs/math/0309168"
+      ],
+      "audit_date": "2026-09-30",
+      "metadata_record": "@article{HainesKottwitzPrasad2010,\n  author = {Haines, Thomas J. and Kottwitz, Robert E. and Prasad, Amritanshu},\n  title = {Iwahori-Hecke Algebras},\n  journal = {Journal of the Ramanujan Mathematical Society},\n  volume = {25}, pages = {113--145}, year = {2010},\n  eprint = {math/0309168}, archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/math/0309168},\n  note = {Presentation anchors refer to arXiv version 3, sections 7.1--7.2}\n}"
+    }
+  ]
+}

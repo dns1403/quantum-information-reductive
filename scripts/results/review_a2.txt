@@ -1,0 +1,120 @@
+# Independent adversarial review of the A2 positivity obstruction
+
+Reviewer: source-audit agent, separately from the operator-algebra agent who proposed the calculation and the coordinating agent's regular-representation implementation. Date: 2026-09-30.
+
+**Verdict:** the proposed counterexample survives independent symbolic verification and the normalization/inclusion checks below. It disproves positivity of the unweighted-length diagonal Hecke multiplier for all q>0, q≠1, already on finite type A2 and therefore on affine type A2. It does not classify every positive time of an isolated multiplier, every rate function, or approximation properties of the Hecke algebra. Novelty remains provisional pending specialist/full citation review.
+
+## Conventions checked
+
+Use the normalized basis T_w of H_q(S_3), with q=u²>0, involution T_w*=T_{w^{-1}}, trace τ(T_w)=δ_{w,e}, and relations
+
+```
+S²=1+(u−u^(-1))S,
+T²=1+(u−u^(-1))T,
+STS=TST.
+```
+
+The standard unnormalized generators H_s=u T_s instead satisfy (H_s−q)(H_s+1)=0. A diagonal multiplier has the same factors r^ell(w) in either basis because the basis rescaling itself is diagonal. This is exactly the normalized convention in Borst–Caspers–Wasilewski §8.1, with p_s(q)=(q_s−1)/sqrt(q_s).
+
+Take q>1 and P(q)=Σ_{w∈S_3}q^ell(w)=1+2q+2q²+q³=(1+q)(1+q+q²). Set
+
+```
+h = 1+u(S+T)+u²(ST+TS)+u³STS,
+p_+ = h/P(q).
+```
+
+There is no hidden positivity assumption here. Pairing w with sw in the sum, using the quadratic relation when length decreases, proves S h=u h and T h=u h. Thus T_w h=u^ell(w)h and h²=P(q)h. Also h*=h, so p_+ is a self-adjoint idempotent, hence positive in the finite-dimensional Hecke C*-algebra and in every faithful inclusion into an operator algebra. Its trace is 1/P(q)>0, so it is nonzero. It is central because the analogous right multiplication identities hold, but centrality is not needed for the argument.
+
+## Independent matrix check
+
+The proposed matrices are
+
+```
+S = diag(u,−1/u),
+T = [[−1/(u(q+1)), sqrt(q²+q+1)/(q+1)],
+     [sqrt(q²+q+1)/(q+1), u*q/(q+1)]].
+```
+
+They are real symmetric for u>0. Direct symbolic multiplication gives both quadratic relations and STS=TST exactly. Consequently they define a *-representation of H_q(S_3). As the algebra is finite-dimensional, no continuity or domain issue is involved. In this representation p_+ has image zero, consistent with it being the trivial-block projection.
+
+For Φ_r(T_w)=r^ell(w)T_w, let X=π(Φ_r(p_+)). Independent calculation gives
+
+```
+tr(X)=2(1−r)(1+qr)/P(q),
+det(X)=(1−r)²(1+qr)²(1−q r²)/P(q)².
+```
+
+The eigenvalues are therefore
+
+```
+lambda_± = (1−r)(1+qr)(1±sqrt(q)r)/P(q).
+```
+
+For q>1 and q^(−1/2)<r<1, lambda_-<0. With r=exp(−t), this is the interval 0<t<(log q)/2. The positive p_+ is sent to a nonpositive element, so the map is not positive and a fortiori not CP. At t=0 it is the identity; the failure for arbitrarily small positive t rules out the claimed QMS. One must not say that nonnegative eigenvalues for this one input at later times prove positivity or CP there.
+
+Concrete exact certificate: q=4, u=2, r=3/4 gives
+
+```
+X = [[8/525, sqrt(21)/350], [sqrt(21)/350, 2/525]],
+spec(X) = {1/42, −1/210}.
+```
+
+The q=4 benchmark is a legitimate abstract positive Hecke parameter (and residue-field size for an unramified quadratic local extension); it is not a claim that 4 is a prime in the particular Q_p example.
+
+## Faithful finite-parabolic inclusion checked
+
+Let W contain a standard parabolic W_J≅S_3 with the same equal parameter q. The span of {T_w:w∈W_J} is a unital *-subalgebra of the full Hecke algebra. The regular Hecke representation on ℓ²(W) restricts on the invariant subspace ℓ²(W_J) to the finite regular representation, because the multiplication rule of generators in J does not leave W_J. The restricted trace is the finite canonical trace, with τ(x*x)=Σ|x_w|². Thus the inclusion is faithful. It is not a truncation of a basis or graph.
+
+The restriction of an ambient diagonal length multiplier to this subalgebra is exactly the finite multiplier because standard-parabolic length agrees with ambient Coxeter length. Positivity of an ambient map would make its restriction positive. Equivalently, positivity for a member of a unital C*-subalgebra is the same in the subalgebra and ambient algebra by spectral permanence. The two-dimensional representation **does not need to extend** to the affine Hecke algebra. This removes a plausible but invalid objection to the transfer. Every pair of adjacent simple generators in affine type A2 generates the required finite A2 parabolic.
+
+## q<1 and q=1 checks
+
+The assignment T_s^(q)↦−T_s^(q^(-1)) respects the quadratic relation because (sqrt(q^(-1))−sqrt(q))=−(sqrt(q)−sqrt(q)^(-1)). Braid relations have equal word lengths on both sides, so the signs agree. It defines a trace-preserving *-isomorphism, intertwining every length-diagonal multiplier. For q<1 use the sign-block projection
+
+```
+p_- = [Σ_w (−q^(-1/2))^ell(w) T_w]/P(q^(-1)).
+```
+
+It maps to p_+ at parameter q^(-1)>1. Hence nonpositivity occurs for 0<t<|log q|/2 for every q≠1. The q=1 case is excluded: Coxeter length is CND and the ordinary group Fourier semigroup is CP. Our bad interval shrinks to zero as q→1, as it must. This also means that continuity of Hecke C*-algebras near q=1 is not evidence for all-time CP of this particular formula.
+
+## Exact verification command run by reviewer
+
+The following was executed via `uv run --with sympy python` and returned zero for every displayed identity. The coordinating agent has a separate regular-representation artifact; this is an independently reproducible two-dimensional certificate, not a floating-point optimization.
+
+```python
+import sympy as s
+u, r = s.symbols('u r', positive=True)
+q = u**2
+S = s.diag(u, -1/u)
+b = s.sqrt(q*q + q + 1)/(q + 1)
+T = s.Matrix([[-1/(u*(q+1)), b], [b, u*q/(q+1)]])
+I = s.eye(2)
+assert s.simplify(S*S-I-(u-1/u)*S) == s.zeros(2)
+assert s.simplify(T*T-I-(u-1/u)*T) == s.zeros(2)
+assert s.simplify(S*T*S-T*S*T) == s.zeros(2)
+P = (1+q)*(1+q+q*q)
+X = (I+u*r*(S+T)+u*u*r*r*(S*T+T*S)+u**3*r**3*S*T*S)/P
+lp = (1-r)*(1+q*r)*(1+u*r)/P
+lm = (1-r)*(1+q*r)*(1-u*r)/P
+assert s.factor(s.trace(X)-lp-lm) == 0
+assert s.factor(X.det()-lp*lm) == 0
+assert s.simplify(X.subs(r,1)) == s.zeros(2)
+assert s.simplify(lm.subs({u:2,r:s.Rational(3,4)})) == -s.Rational(1,210)
+print('All exact checks passed.')
+```
+
+These computations verify the finite algebraic identities. The symbolic proof of positivity of p_+, the sign argument, and faithful inclusion above are required for the infinite-affine consequence; numerical checks alone would not establish it.
+
+## Literature/novelty boundary
+
+[Borst–Caspers–Wasilewski](https://arxiv.org/html/2109.00588v2), published *Groups, Geometry, and Dynamics* 18 (2024), 501–549, **Assumption 8.1**, explicitly assume normal UCP extension of the Hecke multiplier; they establish relevant known cases q=1 and right-angled systems through cited results. **Problem 9.1**, published p.546, asks broadly about Haagerup and weak-* completely bounded approximation properties, and singles out generality of the unweighted-length assumption. The counterexample addresses that singled-out proposed family. It does **not** disprove Haagerup, CBAP, or existence of other QMS. The finite algebra itself certainly has many CP semigroups, and affine Hecke algebras have other analytic structure.
+
+Forward checking found [Mario Klisse and Helena Perović, Quantum Metric Structures on Iwahori-Hecke Algebras, arXiv:2508.07857v1](https://arxiv.org/html/2508.07857), posted 2025-08-11. Its main results concern right-angled systems. Section 4.1 uses Coxeter Schur multipliers m_r on B(ℓ²W), not the questioned Hecke-basis multiplier: since T_s^q=T_s^1+(sqrt(q)−1/sqrt(q))Q_s with Q_s diagonal,
+
+```
+m_r(T_s^q)=r T_s^q+(1−r)(sqrt(q)−1/sqrt(q))Q_s.
+```
+
+The extra diagonal term is essential. That preprint therefore supplies no contradiction to this A2 result. A targeted search for length-multiplier failures, Hecke/S3/positivity, and Coxeter/Hecke QMS located no prior explicit equivalent formula; Mario Klisse's thesis was also checked at relevant approximation-property passages. This is evidence of a potentially useful explicit obstruction, not proof of originality. Before describing a publication-level new result, check the complete citation graph and consult a specialist. No external contact was made.
+
+Version warning: the arXiv HTML conversion of BCW and Klisse–Perović displays an internal date in August 2026; the actual arXiv submission histories remain BCW v2 2022-08-04 and Klisse–Perović v1 2025-08-11. Treat the submission history and published metadata as authoritative for versions.

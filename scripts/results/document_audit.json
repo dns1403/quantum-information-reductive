@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "bibliography_entries": 23,
+  "cited_entries": 23,
+  "labels": 13,
+  "references_resolved": 12,
+  "environments_balanced": true,
+  "experiment_fields_complete": true,
+  "notes_sha256": "fd5142f3ef6cd487c66bb122b8defbb95fa8dcf0e3f2ef394338697d0584ad55",
+  "notes_check": "supplied PDF hash matches audited source; fetched author PDF byte-identical",
+  "latex_compiled": false
+}

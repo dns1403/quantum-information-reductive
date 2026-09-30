@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact SymPy identities; no numerical tolerance",
+  "finite_algebra": "H_q(S_3), genuine parabolic subalgebra of affine A2",
+  "parameter": "q=u^2>0",
+  "projection_normalizer": "(u**2 + 1)*(u**2 - u + 1)*(u**2 + u + 1)",
+  "image_eigenvalues": [
+    "(1 - r)*(-r*u + 1)*(r*u**2 + 1)/((u**2 + 1)*(u**4 + u**2 + 1))",
+    "(1 - r)*(r*u + 1)*(r*u**2 + 1)/((u**2 + 1)*(u**4 + u**2 + 1))"
+  ],
+  "failure_for_q_gt_1": "1/sqrt(q) < r < 1, or 0<t<(log q)/2",
+  "failure_for_q_ne_1": "0<t<abs(log q)/2 via sign twist",
+  "q4_r3over4_eigenvalues": [
+    "-1/210",
+    "1/42"
+  ],
+  "q4_projection": "exact selfadjoint rank-one projection in regular 6x6 model"
+}

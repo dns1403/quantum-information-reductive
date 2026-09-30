@@ -1,0 +1,41 @@
+# Independent adversarial review of entropy claims B2a and B2b
+
+Reviewer: operator-audit agent; date 2026-09-30. Scope is the two secondary entropy claims in `artifacts/source_entropy.md`. The reviewer independently inspected the decisive definitions/theorems in Wirth--Zhang arXiv:2007.13506v2 and the published HTML of Gao--Junge--LaRacuente--Li, DOI 10.1017/fms.2024.117. This review does not assert novelty and does not replace computational verification of the elementary identities.
+
+## Verdict
+
+Both claims survive this audit. The uniform lower bound is a valid consequence of the resolvent argument and the 2025 CP-order theorem. The Iwahori sharp rate 2 is justified by the explicit free-product presentation, **provided the explanation adds logarithmic-mean regularity**, as detailed below. This omitted hypothesis is repairable from the same source; it is not a reason to downgrade the conclusion to a conjecture.
+
+## B2a: uniform lower bound
+
+1. **Algebra and spectral radius.** With vol(K)=1, h_0=P_K is the unit of the spherical corner. The recurrences h_1^2=h_2+(p+1)h_0 and h_1 h_n=h_{n+1}+p h_{n-1} (n>=2) are consistent, including the exceptional root degree. The operator h_1 acts as adjacency on the infinite (p+1)-regular tree in the quasi-regular realization. Orient toward an end; each vertex has p children. If S sends a vertex vector to the normalized sum of its children, S is an isometry and adjacency is sqrt(p)(S+S*), giving norm <=2sqrt(p). This excludes the spurious trivial-representation eigenvalue p+1, which would be invalid in the reduced completion.
+
+2. **The resolvent belongs to L1.** The Chebyshev polynomial formula gives ||h_n|| <= C(n+1)p^{n/2}, so the series b_r=sum r^n h_n converges in operator norm for r sqrt(p)<1. Because every summand is supported in the same finite projection P_K with tau(P_K)=1, operator-norm convergence implies L1 convergence in the ambient semifinite VN(G). Thus it is legitimate to evaluate tau(lambda_g b_r). The trace of b_r is 1; positivity follows independently from the resolvent spectral formula, not positivity of each h_n.
+
+3. **Resolvent numerator checked.** Multiplication of the series by P_K-r h_1+p r^2 P_K gives (1-r^2)P_K: the degree-two coefficient has p-(p+1)=-1, accounting for the numerator. Thus b_r=(1-r^2)(P_K-rh_1+p r^2P_K)^{-1}. Its spectrum is bounded below by (1-r^2)/(1+r sqrt(p))^2 and above by (1-r^2)/(1-r sqrt(p))^2.
+
+4. **Exact constants checked.** At r=1/(22sqrt(p)), the upper bound is at most 484/441<11/10. The lower bound for p>=2 is at least 967/1058>9/10. No large-p limiting argument or rounded inequality is needed.
+
+5. **Coefficient identity and CP order.** Each lambda(h_n) is in L1 because of finite support projection. The standard Plancherel identity tau(lambda_g lambda(h_n))=h_n(g^{-1}) gives r^{d(o,go)} after summation. L1 convergence controls the coefficient error uniformly in g since ||lambda_g||=1. Also tau(lambda_g P_K)=1_K(g). If c>=0 is in ambient L1, then phi_c(g)=tau(lambda_g c) is positive definite: sum_ij conjugate(z_i)z_j phi_c(g_i^{-1}g_j)=tau(c x* x)>=0 for x=sum z_i lambda_gi. This proves that the differences of the symbols are positive definite and therefore induce normal CP Fourier multipliers. The two CP inequalities hold already on VN(G), so compression to every I-corner is valid. There is no unjustified finite-index or nonamenable Schur-transfer step.
+
+6. **The 2025 theorem applies.** Published Gao--Junge--LaRacuente--Li Theorem 3.2 assumes a symmetric QMS on a finite tracial von Neumann algebra and its trace-preserving fixed expectation; it does not assume finite dimension or finite Pimsner--Popa index. It states alpha_c>=1/(2t_cb), with their entropy decay exponent 2alpha_c. The report's exponent is therefore >=1/t_cb. Since t_cb<=t_0=(log p)/2+log22, the stated lower bound 1/t_0 has the correct direction and factor of two. The normalized trace on M_I satisfies all the assumptions.
+
+I found no counterexample to these steps. The claim is a proved project corollary of established analysis, with no novelty claim.
+
+## B2b: Iwahori rate 2
+
+1. **Extended rather than ordinary affine Weyl group.** For PGL2 the type-changing length-zero element omega has order 2 and swaps the two affine simple reflections. Eliminating the second simple reflection leaves generators s and omega with s^2=omega^2=e and no mixed braid relation. In the Hecke algebra only s is deformed; X^2=(p-1)X+p and Y^2=1. This is the correct unequal treatment of the two generators. Treating vertex displacement as ordinary affine length would have been wrong, but B2b avoids that error.
+
+2. **Faithful free-product trace.** Nonempty alternating X,Y words are nonidentity extended-Hecke basis elements: omega steps have length zero, while every newly encountered s becomes the opposite affine simple reflection after conjugation and length is additive. The canonical trace vanishes on these words. Since tau(X)=tau(Y)=0 and each factor's centered space is one-dimensional, this proves freeness. A has spectral weights 1/(p+1),p/(p+1) at eigenvalues p,-1; B has weights 1/2,1/2 at eigenvalues +1,-1. All are strictly positive, and the faithful GNS completion gives the asserted tracial von Neumann free product. This is not an arbitrary semifinite compression identity.
+
+3. **Displacement count.** Writing s(n)=-n and omega(n)=1-n, an alternating word with k omega letters sends 0 to either k or -k. This follows directly by checking the four start/end patterns: (s omega)^k sends 0 to -k; (omega s)^k sends 0 to k; (s omega)^k s also sends 0 to -k; (omega s)^k omega sends 0 to k+1. Thus the rate is exactly the number of Y letters, and the free-product semigroup is id_A * Q_t with Q_t(Y)=e^{-t}Y. Its fixed algebra is A.
+
+4. **No hidden ergodicity assumption.** Wirth--Zhang arXiv v2 **Theorem 4.2** proves free-product stability for tracially symmetric Gamma-regular semigroups, with no ergodicity hypothesis. Their **Corollary 2.9** is expressly formulated with relative entropy to the fixed-point algebra, and the preceding paragraph explains why the nonergodic result is needed for complete inequalities. The identity factor has zero derivation, so it satisfies every desired gradient estimate trivially for either mean and is Gamma-regular. The unbiased two-point factor has CGE(1,infinity).
+
+5. **Required repair: logarithmic-mean regularity.** Corollary 2.9 separately requires that the logarithmic operator mean be regular. Gamma-regularity alone does not state that. However the paragraph immediately following **Definition 2.5** in Wirth--Zhang says that GE(K,infinity) for the arithmetic mean and for a second mean Lambda implies regularity of Lambda (citing Wirth, Proposition 6.12). Their two-point/tree gradient argument and free-product Theorem 4.2 work for arbitrary operator means; in particular, apply them once for the arithmetic mean and once for the logarithmic mean. Both factors satisfy the two estimates, the free product satisfies both, and the stated criterion proves logarithmic-mean regularity. Corollary 2.9 now gives CLSI(2) without a missing hypothesis. The report should explicitly include these two applications and the post-Definition-2.5 criterion.
+
+6. **Sharpness and convention.** Y is a bounded selfadjoint eigenvector of rate 1 with tau(Y)=0, Y^2=1. The densities 1+epsilon Y are positive for |epsilon|<1, have fixed expectation 1, and the second-order entropy quotient tends to e^{-2t}. Therefore no larger exponent is possible. The result alpha_J=2 has the correct normalization.
+
+## Recommendation to coordinator
+
+Retain both secondary corollaries; include the regularity repair above. Cite consistent theorem numbering: published numbering and arXiv numbering differ. These results narrow direction B to sharp constants for deeper subgroups; they do not establish alpha_I=2 beyond Iwahori or a finite-device implementation of M_I.

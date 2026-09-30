@@ -1,0 +1,11 @@
+{
+  "errors": 0,
+  "warnings": {
+    "13": 12,
+    "8": 59,
+    "25": 15,
+    "3": 21,
+    "36": 2
+  },
+  "interpretation": "No errors. Remaining warnings are conventional grouping/typography; see TODO.md. LaTeX not compiled."
+}

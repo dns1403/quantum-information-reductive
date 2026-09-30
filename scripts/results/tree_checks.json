@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "seed": 7302026,
+  "tolerance": 1e-10,
+  "model_warning": "finite Schur channels, not infinite Hecke-corner samples",
+  "cases": [
+    {
+      "N": 2,
+      "reference_dimension": 1,
+      "parents": [
+        -1,
+        0
+      ],
+      "max_centered_distance_eigenvalue": 0.0,
+      "max_determinant_residual": 1.1102230246251565e-16,
+      "density_samples": 100
+    },
+    {
+      "N": 5,
+      "reference_dimension": 1,
+      "parents": [
+        -1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "max_centered_distance_eigenvalue": -1.5265566588595902e-16,
+      "max_determinant_residual": 2.7755575615628914e-17,
+      "density_samples": 100
+    },
+    {
+      "N": 5,
+      "reference_dimension": 3,
+      "parents": [
+        -1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "max_centered_distance_eigenvalue": -3.247966894487928e-16,
+      "max_determinant_residual": 2.7755575615628914e-17,
+      "density_samples": 100
+    },
+    {
+      "N": 9,
+      "reference_dimension": 2,
+      "parents": [
+        -1,
+        0,
+        0,
+        2,
+        1,
+        4,
+        4,
+        0,
+        1
+      ],
+      "max_centered_distance_eigenvalue": 5.732921201657601e-16,
+      "max_determinant_residual": 3.469446951953614e-18,
+      "density_samples": 100
+    }
+  ],
+  "total_density_time_checks": 1200,
+  "minimum_entropy_inequality_slack": 1.6799370013576703e-09,
+  "satake_defect_exact": "-(q - 1)*(r - 1)*(r + 1)",
+  "resolvent_coefficients_checked": 9,
+  "uniform_operator_bounds_exact": [
+    "967/1058 > 9/10",
+    "484/441 < 11/10"
+  ],
+  "iwahori_alternating_word_checks": 62
+}

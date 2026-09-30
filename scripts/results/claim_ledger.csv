@@ -1,0 +1,23 @@
+id,claim_latex,category,evidence_latex
+C01,CND Fourier QMS and Markov dilation,Established in literature,"Arhancet, Thm.~3.1"
+C02,"Normalized trace, invariant corner, exact fixed algebra",Proved here; standard,Proposition~\ref{prop:corner}; cocycle proof
+C03,"Tree example, spherical versus noncommutative corners",Established / worked here,Recurrence and Iwahori presentation
+C04,Nonnegative rates alone ensure Hecke CP,Refuted,Theorem~\ref{thm:a2}
+C05,Length damping fails for every $q\ne1$ in A2,Proved here,Exact symbolic and regular certificates
+C06,The same formula fails in affine A2,Proved here,Faithful finite-parabolic inclusion
+C07,The certificate is previously unpublished,Conjectured; unverified,Not located in scoped search
+C08,Support-count rates define QMS,Established method; proved application,Commuting parabolic expectations
+C09,A proper CP replacement at $q=2$ exists,Conjectured question,No construction or impossibility theorem
+C10,Spherical and Iwahori entropy exponents equal 2,Proved here from literature,Proposition~\ref{prop:sharp}; Wirth--Zhang
+C11,All subgroup levels have bound~\eqref{eq:uniform},Proved here from literature,CP-order resolvent; 2025 theorem
+C12,All deeper sharp exponents equal 2,Conjectured,Not implied by gap or bound
+C13,Finite expectation index applies here,Refuted,Diffuse spherical subcorner
+C14,Finite tree Schur exponent 2 and Kraus rank $N$,Established / proved application,Cut dephasing and determinant
+C15,Random finite Schur checks support contraction,Supported numerically,"1,200 tests; tolerance $10^{-10}$"
+C16,Tree truncation gives a finite Hecke device,Refuted as an inference,No compatible algebra/trace map supplied
+C17,Complex compact-open higher derived Hecke survives,Refuted for stated object,Equation~\eqref{eq:ext-collapse}
+C18,Mod-$p$ averaging is exact,Refuted,Augmentation of $\mathbf F_p[C_p]$
+C19,A bounded graded *-realization retains positive degrees,Refuted under stated hypotheses,Positive nilpotent-ideal argument
+C20,Guessed Satake--Poisson intertwining holds,Refuted,Equation~\eqref{eq:satake-defect}
+C21,Derived Heyer data improves QMS entropy,Conjectured / unsupported,Missing positive correspondence
+C22,Protected algebra implies robust code or Gibbs sampler,Refuted as an inference,No operational hypotheses supplied

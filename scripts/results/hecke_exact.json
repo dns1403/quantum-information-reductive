@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "model": "full H_4(S3), faithful 6-dimensional left regular representation",
+  "arithmetic": "exact rational; no numeric tolerance",
+  "q": 4,
+  "r": "3/4",
+  "input_projection_rank": 1,
+  "output_eigenvalues_multiplicity": {
+    "52/105": 1,
+    "13/6720": 1,
+    "1/42": 2,
+    "-1/210": 2
+  },
+  "negative_rayleigh_quotient": "-1/210",
+  "exact_witness_in_ordered_basis": [
+    "0",
+    "1",
+    "-1",
+    "-1",
+    "1",
+    "0"
+  ],
+  "basis_permutations": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      1
+    ],
+    [
+      2,
+      1,
+      0
+    ]
+  ],
+  "trace_input": "1/105",
+  "trace_output": "1/105",
+  "rank_one_parameter_checks": 15,
+  "modular_averaging_checks": 4
+}
