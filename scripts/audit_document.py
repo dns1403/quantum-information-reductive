@@ -1,5 +1,6 @@
 """Verify document references and source fingerprints without compiling LaTeX."""
 import hashlib
+import csv
 import json
 import re
 from pathlib import Path
@@ -31,6 +32,19 @@ for mode, env in re.findall(r"\\(begin|end)\{([^}]+)\}", report):
     else:
         assert stack and stack.pop() == env, (mode, env, stack)
 assert not stack
+note=expand_inputs('notes/hecke_positivity.tex')
+note_labels=re.findall(r"\\label\{([^}]+)\}",note)
+assert len(note_labels)==len(set(note_labels)), 'Duplicate standalone-note label'
+note_refs=set(re.findall(r"\\(?:eqref|ref)\{([^}]+)\}",note))
+assert note_refs<=set(note_labels),f'Standalone note has external references: {note_refs-set(note_labels)}'
+note_cites=set()
+for group in re.findall(r"\\cite(?:\[[^\]]*\])?\{([^}]+)\}",note):
+    note_cites.update(group.split(','))
+assert note_cites<=set(keys)
+with Path('scripts/results/claim_ledger.csv').open(newline='') as f:
+    claims=list(csv.DictReader(f))
+assert len({row['id'] for row in claims})==len(claims)
+assert all(row['id']+' &' in report for row in claims), 'Ledger/report mismatch'
 for image in re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", report):
     assert Path(image).is_file(), image
 assert "\\hline" not in report
@@ -57,6 +71,7 @@ result = {"status": "PASS", "bibliography_entries": len(keys), "cited_entries": 
           "labels": len(labels), "references_resolved": len(refs),
           "environments_balanced": True, "experiment_fields_complete": True,
           "experiments":experiments,"shared_note_input_resolved":True,
+          "standalone_note_references_resolved":True,"claim_ledger_rows":len(claims),
           "notes_sha256": expected, "notes_check": notes_status,
           "latex_compiled": False}
 Path("scripts/results/document_audit.json").write_text(json.dumps(result, indent=2)+"\n")

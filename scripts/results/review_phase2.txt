@@ -249,3 +249,35 @@ The finite-parabolic inclusion, interval sign conclusion, and generator
 sufficiency are mathematical proofs given above, supported by finite exact
 identity checks rather than being replaced by them. Novelty is not established
 by this review; no external outreach was performed.
+
+9. Final-note transcription review
+----------------------------------
+Read notes/hecke_positivity_body.tex after the completed proofs/checks; no
+already-passed experiment was rerun. The explicit symmetric K entries A,B,C
+match the independent orthonormal compression, including all q and square-root
+factors. The upper-block trace/determinant and q=4 halfspaces are consistent.
+The physical density conversion sigma=R rho and ordinary-trace adjoint
+sigma -> R Phi(R^-1 sigma) are correct on the direct-sum algebra by tau-
+symmetry. At q=4, gamma_0/gamma_+=20, so the negative physical output
+eigenvalue is exactly -2/21. The fixed-time pinched M4 extension is properly
+distinguished from an identity-at-zero QMS on all of M4.
+
+The added proper rate max{ell(w)-3,0} is a valid counterexample to sufficiency
+of all finite standard-parabolic tests in affine A2. Every such parabolic has
+length at most three, so every restriction is the zero generator. But a
+trace-preserving UCP extension at any positive time fixes each simple Hecke
+generator; faithfulness and Schwarz place those generators in its
+multiplicative domain, forcing every T_w fixed, contradicting damping at
+length four. This argument even works at q=1 and does not rely on the
+q!=1 diagonal-idempotent classification. It says nothing decisive about
+the separate normalized corrected-length problem, as the note states.
+
+No substantive transcription or normalization discrepancy was found. One
+minor convention clarification was sent to the coordinator: the expectation-
+mixture theorem writes A=sum c_J(id-E_J), whereas the opening convention uses
+the evolution generator L in exp(tL). Label A=-L the positive generator and
+write the semigroup exp(-tA). The proof already has the correct negative
+exponential, so the issue is terminology/sign clarity rather than the result.
+The note itself was not edited by the reviewer; no commit was made.
+
+Coordinator resolution (2026-09-30): the final note and affine source memo now explicitly define A=-L as the positive rate operator and L as the evolution generator. The theorem and proof use exp(-tA)=exp(tL); the review sign-label clarification is resolved.

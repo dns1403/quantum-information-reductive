@@ -388,7 +388,10 @@ basis elements are retained; the model is the full finite C*-algebra.
 checks trace orthonormality, all nine identity-Choi blocks, the reduced
 pencils, the symmetric characteristic polynomials and all repair branches.
 It also checks five exact undeformed CND benchmarks, including a failing
-case. The reviewer independently reconstructs the criterion and formulas.
+case, and 81 exact Choi blocks of finite-time channels at three parameters,
+including asymmetric rates. Those checks verify the implementation of
+exponentiation; all-time CP is supplied by the proof. The reviewer
+independently reconstructs the criterion and formulas.
 \paragraph{Results}
 {\setlength{\tabcolsep}{8pt}\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{lll}\toprule
@@ -428,3 +431,281 @@ are exact rational halfspace intersections; plotting uses floating-point
 coordinates only for rendering. The rescaled repaired rates at $q=4$ are
 $(a,b,c)=(1,7/6,4/3)$, obtained by dividing $(6,7,8)$ by six.}
 \end{figure}
+
+\section{A bounded affine extension attempt}
+Let $W$ be affine $\widetilde A_2$ with three simple generators
+$S=\{s_0,s_1,s_2\}$ and equal parameter $q>0$. Write
+$M=\mathcal N_q(W)$ for the von Neumann closure of the regular Hecke
+representation on $\ell^2(W)$, with its faithful normal coefficient trace.
+Every pair $s_i,s_j$ generates a genuine finite $A_2$ parabolic.
+Consequently any diagonal symmetric QMS on $M$ must satisfy
+Theorem~\ref{thm:p2-cone} with
+\[
+ (x,y,z,v)=(a(s_i),a(s_j),a(s_is_j),a(s_is_js_i))
+\]
+for all three pairs, together with inverse symmetry. If rates are the
+same on words of each of these three lengths, the seven inequalities
+apply directly. In particular, a global rate
+$a(w)=\ell(w)+h1_{\{w\ne e\}}$ necessarily has
+$h\geq h_{\min}(q)$. Such a rate is proper for every finite $h\geq0$,
+where proper means that $\{w:a(w)\leq R\}$ is finite for every finite
+$R$. The local threshold does not prove that any such global semigroup
+exists. Finite word balls are not being used as C*-subalgebras.
+
+There is even a simple proper counterexample to the sufficiency of the
+local tests alone. Set $a(w)=\max\{\ell(w)-3,0\}$. Every finite standard
+parabolic restriction is the zero generator and passes its cone. A
+trace-preserving UCP map with these rates would fix all simple generators,
+put them in its multiplicative domain, and therefore fix all $T_w$.
+But it damps every word of length four at positive times. This contradiction
+shows that all finite-parabolic tests can pass while global CP fails.
+This particular counterexample has zero simple-generator rates; it does
+not decide the normalized corrected-length problem below.
+
+We pursue the conditional-expectation construction because each of its
+components has a globally justified CP extension. The following theorem
+classifies that entire diagonal construction route.
+
+\begin{lemma}[Descent extraction]\label{lem:p2-descent}
+Let $(W,S)$ be a Coxeter system with common parameter $q\ne1$,
+$\kappa=\sqrt q-1/\sqrt q$, and let $\Phi$ be a normal trace-preserving
+UCP map on $\mathcal N_q(W)$ diagonal in $T_w$, say
+$\Phi(T_w)=m(w)T_w$. If $J=\{s\in S:m(s)=1\}$, then
+$m(w)=1$ if and only if $w\in W_J$.
+\end{lemma}
+\begin{proof}
+If $\Phi(x)=x$, Schwarz gives $\Phi(x^*x)-x^*x\geq0$ with trace zero.
+Faithfulness forces equality, and the same applies to $xx^*$; thus $x$
+is in the multiplicative domain. If $T_w$ is fixed, so is $T_wT_w^*$.
+For a left descent $s$ of $w$, traciality and basis orthonormality give
+\begin{equation}\label{eq:p2-descent}
+ [T_s](T_wT_w^*)=\tau(T_sT_wT_w^*)
+ =\tau(T_w^*T_sT_w)=\kappa\ne0.
+\end{equation}
+Indeed $T_sT_w=T_{sw}+\kappa T_w$. Comparing the $T_s$ coefficient of
+$\Phi(T_wT_w^*)=T_wT_w^*$ yields $m(s)=1$.
+The inverse $T_s^{-1}=T_s-\kappa1$ is also fixed and in the
+multiplicative domain, and $T_s^{-1}T_w=T_{sw}$ is fixed. Induction on
+the length of a chosen reduced expression proves every letter belongs
+to $J$. Conversely, fixed simple generators are in the multiplicative
+domain, so all their reduced products are fixed.
+No positivity of Hecke structure constants is used; $\kappa$ can be negative.
+\end{proof}
+
+\begin{theorem}[All diagonal Markov projections]\label{thm:p2-projections}
+For common $q>0$, $q\ne1$, every normal trace-preserving UCP idempotent
+on $\mathcal N_q(W)$ diagonal in $T_w$ is the standard-parabolic
+conditional expectation $E_J$ for a unique $J\subseteq S$:
+$E_J(T_w)=1_{W_J}(w)T_w$.
+Moreover a diagonal symmetric QMS with finite rates has fixed algebra
+$\mathcal N_q(W_J)$, where $J=\{s:a(s)=0\}$.
+\end{theorem}
+\begin{proof}
+Idempotence makes $m(w)\in\{0,1\}$. Lemma~\ref{lem:p2-descent} identifies
+this function with $1_{W_J}$. The finite tracial von Neumann inclusion
+has a unique trace-preserving conditional expectation $E_J$; its $L^2$
+orthogonal projection has exactly these coefficients. Normal maps agreeing
+on the ultraweakly dense Hecke algebra agree on $M$.
+For the QMS, apply the lemma at any $t>0$ to $m(w)=e^{-ta(w)}$.
+Its $L^2$ fixed vectors have support in $W_J$; intersecting with $M$,
+or applying the same normal expectation, gives the stated fixed algebra.
+The canonical expectations are the standard construction described in
+Section 8 before Proposition 8.3 of~\cite{CaspersEtAl2023}; the converse
+classification here is proved from the relations.
+\end{proof}
+
+The exclusion of $q=1$ is essential. At $q=1$, the Fourier expectation
+onto any subgroup is diagonal, including the nonparabolic subgroup
+$\{e,st,ts\}\leq S_3$. When $q\ne1$, its basis span is not an algebra:
+$T_{st}T_{ts}=1+\kappa T_s+\kappa T_{sts}$.
+
+\begin{theorem}[Obstruction for positive expectation mixtures]\label{thm:p2-affine}
+Suppose $S$ is finite, $q\ne1$, and a rate is a positive sum or measurable
+integral of generators of diagonal normal trace-preserving Markov
+projections:
+\[
+ a(w)=\int(1-m_\xi(w))\,d\mu(\xi),\qquad a(s)<\infty\quad(s\in S).
+\]
+Then
+\begin{equation}\label{eq:p2-bounded}
+ a(w)\leq\sum_{s\in\supp(w)}a(s)\leq\sum_{s\in S}a(s)<\infty.
+\end{equation}
+The positive rate operator $A=-L$ equals a finite sum
+$A=\sum_{J\subsetneq S}c_J(\id-E_J)$ with $c_J\geq0$ and
+$\sum_Jc_J<\infty$. The semigroup $e^{-tA}=e^{tL}$ is a globally defined
+normal symmetric QMS with bounded evolution generator $L=-A$.
+If $W$ is infinite its rate is not proper.
+In affine $\widetilde A_2$, $a(w)=\sum_{J\subsetneq S}c_J$ for every
+$w$ with $\ell(w)\geq4$.
+\end{theorem}
+\begin{proof}
+The preceding classification writes $m_\xi=1_{W_{J_\xi}}$.
+The indicator that $w\notin W_J$ is the indicator that some member
+of its reduced support is absent from $J$. The union bound, followed
+by integration, proves~\eqref{eq:p2-bounded}.
+Every proper $J$ omits a simple generator, so the total measure of
+nonidentity projections is at most $\sum_sa(s)$. Since $S$ is finite,
+there are only finitely many subsets; combine equal subsets with weights
+$c_J=\mu\{\xi:J_\xi=J\}$. Mass at $J=S$ contributes zero.
+
+Each $E_J$ is normal UCP and trace preserving, and
+\[
+ e^{-tc_J(\id-E_J)}=e^{-tc_J}\id+(1-e^{-tc_J})E_J.
+\]
+The expectations commute, since $E_JE_K=E_{J\cap K}$. Their finite
+product proves global complete positivity, trace preservation, symmetry,
+normality and norm continuity. The evolution generator $L=-A$ is bounded on $M$, hence
+has domain all of $M$; no unbounded-generator assertion is needed here.
+The uniform bound in~\eqref{eq:p2-bounded} contradicts properness for
+infinite $W$. In affine $\widetilde A_2$ every proper standard parabolic
+has longest element of length at most three. A word of length at least
+four therefore belongs to none of them, proving the constant tail.
+\end{proof}
+
+This result also excludes pointwise limits of these rates when all simple
+generator rates have finite limits, because~\eqref{eq:p2-bounded} passes
+to the limit. It does not classify arbitrary diagonal QMS generators,
+and does not exclude the use of nondiagonal expectations or other CP maps.
+For example the finite cone already contains rates outside this
+expectation-mixture cone: every support-based rate on $S_3$ has
+$a(st)=a(sts)$, whereas the valid $q=4$ repaired rates $(6,7,8)$ do not.
+This explicitly refutes the possible inference that all valid diagonal
+noise must arise by the classified construction.
+
+The precise remaining question is whether, at $q=2$, some finite
+$h\geq3(\sqrt2-1)$ makes $T_w\mapsto e^{-t(\ell(w)+h1_{w\ne e})}T_w$
+extend to a normal UCP map on $\mathcal N_2(\widetilde A_2)$ for every
+$t\geq0$, or whether another proper diagonal rate does so. The algebraic
+formula already defines a strongly continuous selfadjoint contraction
+semigroup on $L^2$, with diagonal generator domain
+\[
+ \left\{\xi:\sum_w a(w)^2|\xi_w|^2<\infty\right\}.
+\]
+The missing step is its complete Markov property and bounded normal
+extension to the von Neumann algebra, not its $L^2$ definition. Neither
+the local cone nor the bounded expectation theorem supplies that step.
+This is an explicitly unresolved problem, not a claimed construction.
+Opdam's Corollaries 2.11--2.12, arXiv v4 pp.~16--17, establish finite type-I
+structure of the affine Hecke C*-completion~\cite{Opdam2004}. Abstract
+analytic existence statements from that structure do not enforce
+diagonality in the canonical Hecke basis. That extra requirement is the
+remaining target.
+
+\subsection{E005: test the global expectation route}
+\paragraph{Goal} Determine whether the established expectation construction
+can be strengthened to produce proper diagonal rates in affine $A_2$.
+\paragraph{Hypothesis} Deformed descent coefficients force every diagonal
+Markov projection to be parabolic, closing this particular extension route.
+\paragraph{Method} Prove the fixed-basis extraction lemma and classify
+idempotents before testing. Use exact affine permutations only to verify
+identities; all products retain their complete expansions regardless of
+the finite list of input words.
+\paragraph{Implementation} \texttt{scripts/verify\_affine\_expectations.py}
+uses rational arithmetic at $q=4,1/4,1$ and affine permutation windows.
+It verifies 109 inputs of length at most eight, with product terms reaching
+length fifteen. It also exhausts all unital basis subsets of a true finite
+$A_2$ parabolic, and tests the support indicator bound.
+\paragraph{Results}
+{\setlength{\tabcolsep}{8pt}\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lll}\toprule
+Check/result & Count or conclusion & Status\\\midrule
+Quadratic, inverse and braid action identities & 2,943 & Exact pass\\
+Descent coefficient identity & 981 & Exact pass\\
+Finite $A_2$ basis subalgebras, $q=4,1/4$ & Four, all parabolic & Exact pass\\
+Same enumeration at $q=1$ & Six subgroup algebras & Exact exception\\
+Support indicator bound & 64 cases & Exact pass\\
+All local tests imply global CP & Proper counterexample $\max\{\ell-3,0\}$ & Refuted\\
+All diagonal expectation mixtures & Bounded; constant affine tail & Proved globally\\
+Arbitrary proper diagonal QMS & Undecided & No extrapolation\\\bottomrule
+\end{tabular}}
+\paragraph{Analysis} The route fails for a structural reason, even if one
+allows infinitely many projections or pointwise limits with finite simple
+rates. This is a scoped obstruction, not nonexistence of all proper
+semigroups. The classification proof was separately reviewed and the
+coordinator independently inspected its trace and multiplicative-domain
+steps. No substantive discrepancy was found. Novelty of the elementary
+classification is not asserted from the bounded search. The final
+transcription review clarified one sign label: $A$ is the positive rate
+operator and $L=-A$ is the evolution generator; the semigroup is $e^{-tA}$.
+\paragraph{Next steps} Further work would require a construction outside
+positive mixtures of diagonal Markov projections, or a separate global
+obstruction to the proper corrected-length ansatz. This bounded phase
+stops with the rigorous classification and the exact unresolved extension.
+\begin{verification}
+\textbf{What:} Full-product descent identities, deformation exception,
+and support-bound tests behind the global proof.\\
+\textbf{Command:} \texttt{uv run python scripts/verify\_affine\_expectations.py}.\\
+\textbf{Outcome:} Pass; exact fractions, no tolerance. The output is
+\texttt{scripts/results/affine\_expectations\_exact.json}. Input balls
+are test sets, never multiplication truncations. Infinite assertions
+rest on the proofs, not the finite checks.
+\end{verification}
+
+\section{Finite-system meaning and research verdict}
+The finite algebra describes two scalar sectors and a two-dimensional
+quantum sector. Its minimal faithful Hilbert space has dimension four.
+Let $R=\gamma_+\oplus\gamma_-\oplus\gamma_0I_2$, where the weights are
+given in~\eqref{eq:p2-blocks}. A density relative to the Hecke trace is
+$\rho\geq0$, $\tau(\rho)=1$. Its ordinary physical density matrix is
+the block diagonal matrix $\sigma=R\rho$, satisfying $\Tr_4\sigma=1$.
+For every semigroup classified above, $\tau$-symmetry gives the precise
+Schr\"odinger-picture evolution
+\begin{equation}\label{eq:p2-physical}
+ \sigma\longmapsto\Phi_{t,*}^{\Tr}(\sigma)
+       =R\Phi_t(R^{-1}\sigma).
+\end{equation}
+It is CP on the direct-sum algebra (multiplication by positive central
+$R$ and $R^{-1}$ is CP there), and
+$\Tr\Phi_{t,*}^{\Tr}(\sigma)=\tau(\Phi_t(R^{-1}\sigma))=\Tr\sigma$.
+It is the ordinary-trace adjoint of the Heisenberg map, and $R$ is its
+stationary state. At $q=4$, $R=\operatorname{diag}(1,64,20,20)/105$,
+which is not $I_4/4$.
+
+This gives a concrete failure of the naive prescription. Start in the
+trivial scalar sector, the physical state $\sigma=1\oplus0\oplus0_2$.
+It corresponds to $\rho=p_+/\gamma_+$. At $q=4,r=3/4$ the formally
+length-damped output has matrix-block eigenvalue
+$(\gamma_0/\gamma_+)(-1/210)=-2/21$. It is not a state.
+By contrast the valid depolarizing replacement gives
+$\sigma\mapsto e^{-ht}\sigma+(1-e^{-ht})\Tr(\sigma)R$;
+the full cone supplies further valid sector-transfer and quantum-block
+noise, including the exact corrected-length prescription.
+
+If a channel on all of $M_4$ is desired for a fixed time, first pinch onto
+the three sectors, apply~\eqref{eq:p2-physical}, and include the blocks
+in $M_4$. This is CPTP and has at most sixteen Kraus operators: factor
+the Choi matrix of each block map and embed each resulting rectangular
+Kraus operator between the corresponding subspaces. The bound is
+$\sum_{\alpha,\beta}d_\alpha d_\beta=(1+1+2)^2=16$, and a Stinespring
+environment of dimension at most sixteen suffices for each fixed channel.
+This pinched extension has pinching at $t=0$ on off-block coherences;
+it is not asserted to be a QMS with identity at zero on all of $M_4$.
+Our QMS statement concerns the direct-sum state space. No efficiency,
+locality, scalable implementation, expander advantage, or quantum-code
+property is inferred from this small realization.
+
+The analytical payoff is an exact admissibility test for symmetry-based
+noise prescriptions and a quantitative limit on a plausible deformation
+of group-length noise. The representation theory contributes the faithful
+block model, trace weights, explicit inequalities and a local affine test.
+For split $p$-adic groups of type $A_2$, the equal-parameter Iwahori
+presentation at residue cardinality $q$ contains these finite parabolic
+algebras; see Sections 7.1--7.2 of~\cite{HainesKottwitzPrasad2010}.
+The affine Coxeter algebra used here should be distinguished from an
+extended affine presentation with additional length-zero elements.
+No entropy constant or Gibbs sampler follows from these inequalities.
+The earlier entropy results remain separate background; this phase uses
+neither a CMLSI normalization nor an entropy-decay exponent.
+
+External mathematical review is warranted for the concise obstruction,
+finite cone, and diagonal-projection classification together. The appropriate
+expertise is Hecke operator algebras and completely positive semigroups.
+The general CCP machinery and parabolic expectations are established;
+the explicit certificates and specialized classifications have proofs
+here, but their publication-level novelty remains unconfirmed. No external
+contact, publication or push was performed. Heyer's derived methods have
+no demonstrated role in these arguments. A distinctive further connection
+would require a positive analytic correspondence compatible with the
+specified trace and diagonal dynamics, including a justified coefficient
+passage if mod-$p$ information is invoked. That missing bridge is recorded,
+not supplied by an algebraic adjunction.

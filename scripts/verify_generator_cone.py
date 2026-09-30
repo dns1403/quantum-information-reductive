@@ -79,6 +79,10 @@ sym_eigs=[
 for M,expected in zip([Fplus,Fminus,K],sym_eigs):
     target=s.prod(lam-e for e in expected)
     assert s.factor((lam*s.eye(M.rows)-M.subs(sym_sub)).det()-target)==0
+AA=(-a*(q**4+1)+b*(q**4+2*q**2+1)+c*(q**3+q))/(q*(q+1)**2)
+BB=s.sqrt(D)*(a*(q**2+1)-b*(q-1)**2-2*c*q)/(u*(q+1)**2)
+CC=(2*a*q+2*b*(q**2+1)-c*(q**2+1))/(q+1)**2
+assert zero(K.subs(sym_sub)-s.Matrix([[AA,BB,0],[BB,CC,0],[0,0,2*a-2*b+c]]))
 
 # Exact benchmarks. Depolarization shifts EVERY relevant block by c I.
 for M in [Fplus,Fminus,K]:

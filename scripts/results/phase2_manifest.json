@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-30",
+  "historical_checkpoint": "4a6eaa968fd2a37abe988ac6b1ab3f602e1ef938",
+  "historical_tag": "exp-E001-success",
+  "preserved_subsequent_commit": "3557a81",
+  "branch": "exp/hecke-diagonal-generators",
+  "finite_cone_commit": "6c93b37",
+  "completion_tag": "exp-E005-success",
+  "python": "3.14.7 (main, Sep  1 2026, 14:18:09) [Clang 22.1.3 ]",
+  "packages": {
+    "sympy": "1.14.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "commands": [
+    "uv run python scripts/verify_a2_explore.py",
+    "uv run python scripts/verify_hecke.py",
+    "uv run python scripts/verify_obstruction_review.py",
+    "uv run python scripts/verify_generator_cone.py",
+    "uv run python scripts/verify_affine_expectations.py",
+    "uv run python scripts/plot_generator_cone.py",
+    "uv run python scripts/audit_document.py",
+    "TERM=dumb chktex report.tex",
+    "TERM=dumb chktex notes/hecke_positivity.tex"
+  ],
+  "mathematical_conventions": "q=u^2>0; normalized quadratic T_s^2=1+(u-u^-1)T_s; coefficient trace; Heisenberg L=-a",
+  "arithmetic": "Exact SymPy and rational fractions; no tolerance or optimizer used for mathematical conclusions",
+  "plots": "Exact rational vertices/proved formulas; floating point only for rendering",
+  "proof_limits": [
+    "The witness interval is not the full isolated-time positivity region.",
+    "Finite cone is exact but not a global affine extension criterion.",
+    "Affine obstruction concerns positive mixtures of diagonal Markov projections.",
+    "Publication novelty remains unconfirmed.",
+    "No Hecke multiplication truncations, LaTeX compilation, push, publishing, or researcher contact."
+  ],
+  "review": "Fresh independent reconstruction before prior derivation, plus subsequent cone/affine review; reviewer artifact preserved.",
+  "latex_compiled": false
+}

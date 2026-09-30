@@ -1,0 +1,165 @@
+E005: a global obstruction for the diagonal expectation construction
+Date: 2026-09-30. Status: proved below; finite exact checks are supporting
+verification, not a replacement for the proof. Novelty is not asserted.
+
+Scope and notation
+------------------
+Sign convention: A below denotes the positive rate operator; the evolution
+generator is L=-A and the semigroup is exp(-tA)=exp(tL).
+Let (W,S) be a Coxeter system with finite S and constant parameter q>0,
+q!=1. Write p=sqrt(q)-1/sqrt(q), so p!=0. Let M=N_q(W) be the reduced
+Hecke von Neumann algebra in its faithful left regular representation,
+with canonical faithful normal tracial state tau and orthonormal basis
+(T_w) of L2(M,tau). Thus T_s*=T_s, T_s^2=1+p T_s, and
+T_s T_w=T_sw+p 1_{ell(sw)<ell(w)} T_w. In particular T_s^{-1}=T_s-p1.
+A map is diagonal if Phi(T_w)=m(w)T_w. Markov means normal, unital,
+completely positive, and tau-preserving. A rate a:W->[0,infinity) is
+proper if every sublevel {w:a(w)<=R}, R<infinity, is finite.
+
+Derivation before implementation
+--------------------------------
+LEMMA (descent extraction). The coefficient of T_s in T_w T_w* is
+
+  tau(T_s T_w T_w*) = tau(T_w* T_s T_w)
+                    = p 1_{ell(sw)<ell(w)}.
+
+The second equality follows from the tracial property and the last from
+the Hecke multiplication rule plus orthonormality. This exact coefficient
+is nonzero for a left descent even when q<1; no positivity of structure
+constants, square root choice beyond sqrt(q)>0, or finite truncation is
+being assumed.
+
+LEMMA (fixed basis elements). If Phi is diagonal Markov, J={s:m(s)=1},
+then m(w)=1 if and only if w belongs to the standard parabolic W_J.
+
+Proof. If Phi(x)=x, Schwarz gives Phi(x*x)-x*x>=0 and tau of this
+difference is zero. Faithfulness of tau gives equality. Applying the same
+argument to xx* puts x in the multiplicative domain of Phi. In particular,
+if T_w is fixed, T_w T_w* is fixed. Choose a reduced expression w=sv.
+Comparing its T_s coefficient under Phi and using descent extraction
+gives p m(s)=p, hence m(s)=1. Both T_s^{-1}=T_s-p1 and T_w are fixed,
+and T_s^{-1} is in the multiplicative domain. Thus
+Phi(T_v)=Phi(T_s^{-1}T_w)=T_s^{-1}T_w=T_v. Induction fixes every letter
+of this reduced expression, so w belongs to W_J. Conversely, each T_s
+with s in J is fixed and in the multiplicative domain, so all reduced
+products with letters in J are fixed. This proves the assertion.
+
+THEOREM (classification of diagonal Markov projections). Every diagonal
+Markov idempotent E on M is the canonical tau-preserving conditional
+expectation E_J onto N_q(W_J), for a unique subset J of S.
+
+Proof. Idempotence implies m(w) in {0,1}. The fixed-basis lemma implies
+m(w)=1_{W_J}(w). The standard-parabolic expectation has exactly these
+basis coefficients. Both maps are normal and agree on the weak-* dense
+Hecke *-algebra, hence agree globally. Existence of E_J is the usual
+trace-preserving expectation in a finite tracial von Neumann algebra;
+orthogonal projection in L2 proves its specified coefficients.
+
+COROLLARY (fixed algebra). For any symmetric diagonal Markov semigroup
+Phi_t(T_w)=exp(-t a(w))T_w with finite nonnegative rates, its fixed algebra
+is N_q(W_J), where J={s:a(s)=0}. Indeed, at every t>0, the preceding
+fixed-basis lemma determines the Fourier support of fixed elements.
+Normality and the canonical E_J identify the full fixed algebra. In
+particular ergodicity is equivalent to a(s)>0 for every s in S.
+
+THEOREM (all positive diagonal expectation sums are bounded). Consider
+any sum or positive measurable integral
+
+  A = integral (id-E_x) dmu(x),
+  a(w) = integral (1-m_x(w)) dmu(x),
+
+where E_x are diagonal Markov idempotents, and suppose a(s)<infinity for
+each s in S. Classify E_x=E_{J_x}. Then
+
+  a(w) <= sum_{s in supp(w)} a(s) <= sum_{s in S} a(s) < infinity.
+
+Proof. The indicator 1_{w notin W_J} equals the indicator that at least
+one simple generator in supp(w) is absent from J. Apply the union bound
+to these indicators and integrate. Also every proper J omits some s,
+so mu({x:J_x!=S}) <= sum_s a(s). The identity projection E_S contributes
+zero. Combining equal subsets gives a finite expression
+
+  A=sum_{J proper subset S} c_J(id-E_J),
+  c_J=mu({x:J_x=J})>=0, sum_J c_J<infinity.
+
+This is a bounded normal generator. Each factor
+exp[-t c_J(id-E_J)]=exp(-tc_J)id+(1-exp(-tc_J))E_J is normal UCP,
+tau-preserving, and symmetric. These factors commute because
+E_J E_K=E_{J intersect K}. Their finite product establishes the global
+normal QMS without extrapolating from any finite matrix calculation.
+Every such a on an infinite W is nonproper. Its L2 semigroup is not
+compact at t>0, since the diagonal eigenvalues are bounded below by
+exp[-t sum_s a(s)]>0 along an infinite orthonormal family.
+
+This bound passes to pointwise limits of these rates whenever each a(s)
+has a finite limit. It also rules out unbounded finite-rate constructions
+disguised as countably many repeated diagonal expectations: there are
+only 2^|S| distinct expectations, and finiteness at the simple generators
+forces finite mass on every nonidentity expectation.
+
+AFFINE A2 specialization. Here S={s0,s1,s2}; every proper standard
+parabolic has longest word of length at most 3. Therefore every w with
+ell(w)>=4 has full support, and any rate in the preceding cone satisfies
+
+  a(w)=C:=sum_{J proper subset S} c_J  for every ell(w)>=4.
+
+Thus there are just eight possible support values (including a(e)=0),
+and all infinitely many long words have precisely the same rate. This
+is stronger than merely observing that one chosen support-count rate
+is bounded.
+
+Limits and unresolved question
+------------------------------
+The argument excludes only positive sums/integrals of DIAGONAL Markov
+projections, plus their pointwise finite-rate limits. It does not show
+that every diagonal QMS generator lies in that cone. It does not classify
+nondiagonal expectations or forbid cancellations between such maps.
+It does not settle whether ell(w)+c 1_{w!=e} admits a global affine A2
+QMS for any finite c, or whether another proper diagonal rate exists.
+The exact finite A2 conditional-Choi constraints remain necessary local
+tests, not sufficient global criteria. These are explicitly unresolved.
+
+The restriction q!=1 is essential: at q=1, for every subgroup H<=W,
+the Fourier projection onto VN(H) is diagonal Markov. H need not be a
+standard parabolic. In S3, H={e,st,ts} already contradicts the asserted
+classification at q=1. Its deformation at p!=0 is not basis-closed:
+T_st T_ts = 1+p T_s+p T_sts.
+
+Literature check (bounded; not a novelty assertion)
+-------------------------------------------------
+Searched primary-source leads on 2026-09-30 for "Hecke von Neumann
+algebra diagonal conditional expectation parabolic subalgebra multipliers
+support Coxeter q" and "Hecke von Neumann word length multiplier
+depolarizing semigroup affine positivity". The project's existing
+relative-Haagerup source gives standard-parabolic expectations; no exact
+classification statement was located in this bounded search. The proof
+above is elementary from the Hecke relations and multiplicative domain,
+so should not be promoted as publication-level novelty without further
+checking. Relevant source: Martijn Caspers, Mario Klisse, Adam Skalski,
+Gerrit Vos, and Mateusz Wasilewski, Relative Haagerup property for
+arbitrary von Neumann algebras, Advances in Mathematics 421 (2023),
+109017; https://arxiv.org/abs/2110.15078 (source page rechecked this phase).
+
+Completed verification
+----------------------
+Command: uv run python scripts/verify_affine_expectations.py
+Outcome: PASS, exact fractions, no numerical tolerance.
+Artifact: scripts/results/affine_expectations_exact.json.
+
+The script uses exact affine permutations to calculate Hecke products
+in the full affine A2 algebra. Finite lists specify test inputs only:
+intermediate products are never dropped or treated as a truncated
+algebra. For 109 words of input length<=8, at q=4, q=1/4, and q=1,
+the script performed 2,943 quadratic/inverse/braid action checks and
+981 descent-coefficient checks. Product terms reached length 15, which
+explicitly verifies that the input length cutoff is not a truncation of
+multiplication. It checked full support for every tested word of length
+at least 4 and all 64 support-set indicator union-bound cases.
+
+In the genuine six-dimensional finite A2 parabolic, it exhausted all 32
+unital basis subsets, testing involution and exact multiplicative closure:
+there are exactly the four standard-parabolic subalgebras at q=4 and
+q=1/4, but six subgroup algebras at q=1. This verifies the claimed
+exception and catches failure to account for the deformation term.
+General classifications and nonproperness rest on the proofs above,
+not on extending these finite checks by numerical extrapolation.

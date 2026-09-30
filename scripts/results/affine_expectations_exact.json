@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "model": "full affine A2 affine permutations and exact faithful Hecke multiplication",
+  "warning": "finite inputs are verification only; no output terms are truncated",
+  "arithmetic": "exact fractions",
+  "test_inputs": 109,
+  "max_input_length": 8,
+  "max_encountered_product_length": 15,
+  "words_at_each_length": {
+    "0": 1,
+    "1": 3,
+    "2": 6,
+    "3": 9,
+    "4": 12,
+    "5": 15,
+    "6": 18,
+    "7": 21,
+    "8": 24
+  },
+  "operator_quadratic_inverse_braid_checks": 2943,
+  "descent_coefficient_checks": 981,
+  "support_union_bound_cases": 64,
+  "local_tests_not_sufficient": "a(w)=max(length(w)-3,0) is proper and zero on every finite standard parabolic, but fixes all generators while damping length-four words",
+  "parameters": [
+    {
+      "p": "3/2",
+      "finite_A2_unital_basis_subalgebras": 4
+    },
+    {
+      "p": "-3/2",
+      "finite_A2_unital_basis_subalgebras": 4
+    },
+    {
+      "p": "0",
+      "finite_A2_unital_basis_subalgebras": 6
+    }
+  ],
+  "global_proof": "scripts/results/affine_phase2.txt",
+  "conclusion": "all diagonal Markov projections are standard parabolic at q!=1; their positive generator cone has no proper finite-valued rates in finite rank",
+  "not_concluded": "existence or nonexistence of other proper diagonal QMS on affine A2"
+}

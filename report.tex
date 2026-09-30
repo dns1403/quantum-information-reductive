@@ -43,6 +43,12 @@ exponent $2$ for spherical and Iwahori corners using known free-product results.
 The strongest future questions concern valid deformed multipliers and sharp
 entropy constants at deeper level. Heyer's methods currently contribute precise
 coefficient and functoriality obstructions, not a demonstrated new QMS mechanism.
+The continuation in this version proves the entire four-rate finite $A_2$
+generator cone, its seven-halfspace symmetric specialization, and the sharp
+uniform depolarizing correction $(\sqrt Q-1)(1+Q)$, $Q=\max(q,q^{-1})$.
+It also classifies diagonal Markov projections and proves that their positive
+generator mixtures cannot yield proper rates in affine $A_2$. General proper
+diagonal semigroups remain unresolved.
 \end{abstract}
 
 \section{Scope, evidence, and source audit}
@@ -1086,11 +1092,13 @@ locality, or finite quantum expanders.
 finite-parabolic necessary conditions do not prove complete positivity
 or normal bounded extension on the infinite completion. A proper ambient
 group CND extension is separately blocked by property (T).
-\paragraph{First feasible step} Classify the finite $H_2(S_3)$ radial
-conditional-Choi cone exactly, with $a(s)=a(t)=1$ and independently variable
-rates at lengths two and three. Then formulate a concrete extension lemma
-on the infinite regular Hecke representation, or find incompatible local
-constraints. A finite cone alone is not the desired global theorem.
+\paragraph{First feasible step} The continuation has now completed the
+finite cone, including asymmetric simple rates, and the sharp uniform
+depolarizing repair. The remaining step is the global extension question
+after Theorem~\ref{thm:p2-affine}. Positive mixtures of diagonal Markov
+projections are fully obstructed as a proper-rate construction; a different
+mechanism or a stronger obstruction is required. Local cones alone do not
+give the global theorem.
 \paragraph{Detailed attempt completed} Theorem~\ref{thm:a2}, its exact
 positive-input witness, two independent implementations, parameter-duality
 argument, and affine embedding provide the requested rigorous negative
@@ -1172,11 +1180,11 @@ mod-$p$/quantum-noise theory.
 The checkpoint \texttt{4a6eaa9}, tagged \texttt{exp-E001-success}, was recovered
 without rewriting it. The subsequent ignore-rules commit \texttt{3557a81}
 is preserved on \texttt{exp/hecke-diagonal-generators}. Both decisive exact
-scripts passed again. E003 will consolidate the theorem and obtain a fresh
-reconstruction before the reviewer reads the old derivation. E004 will derive
-the full direct-sum conditional-Choi criterion before implementing symbolic
-checks, starting with generator-exchange symmetry. E005 will test one bounded
-affine extension route. The existing entropy investigation remains background.
+scripts passed again. The plan recorded before implementation was: E003
+consolidate the theorem and obtain a fresh reconstruction before reading the
+old derivation; E004 derive the direct-sum conditional-Choi criterion and
+certify its symbolic specialization; E005 test one bounded affine extension
+route. All three are complete below. The entropy project remains background.
 
 For E004 write $H_q(S_3)=\bigoplus_\alpha M_{d_\alpha}$ with
 $d_\alpha=1,1,2$ and $\tau=\sum_\alpha\gamma_\alpha\Tr_{d_\alpha}$.
@@ -1220,9 +1228,14 @@ C19 & A bounded graded *-realization retains positive degrees & Refuted under st
 C20 & Guessed Satake--Poisson intertwining holds & Refuted & Equation~\eqref{eq:satake-defect}\\
 C21 & Derived Heyer data improves QMS entropy & Conjectured / unsupported & Missing positive correspondence\\
 C22 & Protected algebra implies robust code or Gibbs sampler & Refuted as an inference & No operational hypotheses supplied\\
-C23 & Full four-rate finite A2 generator cone & Proved here & Theorem~\ref{thm:p2-cone}\\
-C24 & Symmetric cone is seven halfspaces & Proved here & Corollary~\ref{cor:p2-symmetric}\\
-C25 & Sharp uniform depolarizing repair & Proved here & Corollary~\ref{cor:p2-repair}\\
+C23 & Full four-rate finite A2 generator cone & Proved here & Theorem~\ref{thm:p2-cone}; exact direct-sum Choi reduction\\
+C24 & Symmetric finite A2 cone is seven halfspaces & Proved here & Corollary~\ref{cor:p2-symmetric}; symbolic characteristic polynomials\\
+C25 & Sharp uniform depolarizing repair threshold & Proved here & Corollary~\ref{cor:p2-repair}; all seven exact branches\\
+C26 & All diagonal Markov projections at common $q\ne1$ are parabolic & Proved here & Theorem~\ref{thm:p2-projections}; multiplicative domain and descent\\
+C27 & Positive diagonal expectation mixtures yield proper affine rates & Refuted for this construction & Theorem~\ref{thm:p2-affine}; bounded rates and constant tail\\
+C28 & Fixed algebra of any diagonal QMS at $q\ne1$ is parabolic & Proved here & Theorem~\ref{thm:p2-projections}\\
+C29 & Physical density conversion and negative output $-2/21$ & Proved here; exact certificate & Equation~\ref{eq:p2-physical}; generator-cone script\\
+C30 & All finite-parabolic cones suffice for global CP & Refuted & Proper rate $a(w)=\max\{\ell(w)-3,0\}$; multiplicative domain\\
 \bottomrule
 \end{longtable}}
 
@@ -1239,6 +1252,10 @@ uv run python scripts/verify\_a2\_explore.py\\
 uv run python scripts/verify\_tree.py\\
 uv run python scripts/plot\_a2\_obstruction.py\\
 uv run python scripts/plot\_entropy\_bounds.py\\
+uv run python scripts/verify\_obstruction\_review.py\\
+uv run python scripts/verify\_generator\_cone.py\\
+uv run python scripts/verify\_affine\_expectations.py\\
+uv run python scripts/plot\_generator\_cone.py\\
 uv run python scripts/audit\_document.py\\
 TERM=dumb chktex report.tex
 \end{quote}
@@ -1249,6 +1266,10 @@ All fixed parameters, normalizations, and unsuccessful approaches used in
 drawing the conclusions are recorded above. The provisional finite rate-cone
 exploration from the historical checkpoint is now resolved by E004, with
 an independently reviewed exact proof.
+The continuation dependency versions, commands, historical checkpoint and
+limitations are recorded in \texttt{scripts/results/phase2\_manifest.json}.
+The standalone note is \texttt{notes/hecke\_positivity.tex}; its shared body
+is included here, so mathematical results have a single maintained source.
 
 \bibliographystyle{plain}
 \bibliography{references}
@@ -1259,6 +1280,9 @@ is identified by its unique subject below and by the tag
 \texttt{exp-E001-success}; this avoids an impossible self-referential hash
 inside its own committed report. Its subject is
 \texttt{exp(E001): audit Hecke QMS bridges -- witness=-1/210 (positivity refuted)}.
+The E003--E004 continuation is commit \texttt{6c93b37}, tagged
+\texttt{exp-E004-success}. E005 and the consolidated deliverables are
+identified by \texttt{exp-E005-success}.
 {\small\setlength{\tabcolsep}{8pt}\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{.05\linewidth}p{.12\linewidth}p{.16\linewidth}p{.10\linewidth}p{.10\linewidth}p{.15\linewidth}p{.08\linewidth}}\toprule
 ID & Date & Description & Commit & Metric & vs baseline & Status\\\midrule
@@ -1266,6 +1290,7 @@ E000 & 2026-09-30 & Sources/corners & E001 tag & N/A & N/A & Verified\\
 E001 & 2026-09-30 & A2 obstruction & E001 tag & $-1/210$ & CP refuted & Exact\\
 E002 & 2026-09-30 & Entropy audit & E001 tag & Eq.~\eqref{eq:uniform} & New audit & Proved\\
 E003 & 2026-09-30 & Fresh obstruction audit & E004 tag & $-1/210$ & Reproduced & Exact\\
-E004 & 2026-09-30 & Full rate cone & E004 tag & $h_{\min}(4)=5$ & Unverified lead resolved & Proved\\\bottomrule
+E004 & 2026-09-30 & Full rate cone & E004 tag & $h_{\min}(4)=5$ & Lead resolved & Proved\\
+E005 & 2026-09-30 & Affine expectation route & E005 tag & Bounded rates & Route obstructed & Proved\\\bottomrule
 \end{tabular}}
 \end{document}

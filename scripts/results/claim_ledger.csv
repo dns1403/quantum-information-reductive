@@ -24,3 +24,8 @@ C22,Protected algebra implies robust code or Gibbs sampler,Refuted as an inferen
 C23,Full four-rate finite A2 generator cone,Proved here,Theorem~\ref{thm:p2-cone}; exact direct-sum Choi reduction
 C24,Symmetric finite A2 cone is seven halfspaces,Proved here,Corollary~\ref{cor:p2-symmetric}; symbolic characteristic polynomials
 C25,Sharp uniform depolarizing repair threshold,Proved here,Corollary~\ref{cor:p2-repair}; all seven exact branches
+C26,All diagonal Markov projections at common $q\ne1$ are parabolic,Proved here,Theorem~\ref{thm:p2-projections}; multiplicative domain and descent
+C27,Positive diagonal expectation mixtures yield proper affine rates,Refuted for this construction,Theorem~\ref{thm:p2-affine}; bounded rates and constant tail
+C28,Fixed algebra of any diagonal QMS at $q\ne1$ is parabolic,Proved here,Theorem~\ref{thm:p2-projections}
+C29,Physical density conversion and negative output $-2/21$,Proved here; exact certificate,Equation~\ref{eq:p2-physical}; generator-cone script
+C30,All finite-parabolic cones suffice for global CP,Refuted,"Proper rate $a(w)=\max\{\ell(w)-3,0\}$; multiplicative domain"

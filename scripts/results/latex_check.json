@@ -1,11 +1,26 @@
 {
-  "errors": 0,
-  "warnings": {
-    "13": 12,
-    "8": 59,
-    "25": 15,
-    "3": 21,
-    "36": 2
-  },
-  "interpretation": "No errors. Remaining warnings are conventional grouping/typography; see TODO.md. LaTeX not compiled."
+  "latex_compiled": false,
+  "interpretation": "No errors; warnings concern conventional mathematical grouping, dashes, dates and typography. ChkTeX returns 2 for warnings. No LaTeX compilation performed.",
+  "documents": {
+    "report.tex": {
+      "errors": 0,
+      "warnings_by_code": {
+        "13": 13,
+        "8": 66,
+        "25": 36,
+        "3": 32,
+        "36": 2
+      }
+    },
+    "notes/hecke_positivity.tex": {
+      "errors": 0,
+      "warnings_by_code": {
+        "1": 1,
+        "25": 21,
+        "3": 10,
+        "13": 1,
+        "8": 1
+      }
+    }
+  }
 }
